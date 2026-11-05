@@ -119,11 +119,11 @@ export const fr = {
     items: [
       {
         title: 'Réservez votre piste',
-        text: 'Choisissez votre créneau en ligne en deux minutes. Votre piste privée vous attend, de 2 à 32 joueurs. Au-delà, on privatise.',
+        text: 'Choisissez votre créneau en ligne en deux minutes. Votre piste privée vous attend, de 2 à 32 joueurs.',
       },
       {
         title: 'Tirez, défiez, rejouez',
-        text: 'Deux répliques par piste, plus de 20 scénarios de jeu et un score en temps réel. Débutant ou tireur confirmé, la cible ne ment pas.',
+        text: 'Deux authentiques fusils Airsoft par piste, plus de 20 scénarios de jeu et un score en temps réel. Débutant ou tireur confirmé, il y en a pour tout le monde !',
       },
       {
         title: 'Trinquez avant, pendant ou après',

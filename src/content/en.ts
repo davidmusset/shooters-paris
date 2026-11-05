@@ -90,11 +90,11 @@ export const en: Dict = {
     items: [
       {
         title: 'Book your lane',
-        text: 'Pick your time slot online in two minutes. Your private lane is waiting, for 2 to 32 players. Larger groups go private.',
+        text: 'Pick your time slot online in two minutes. Your private lane is waiting, for 2 to 32 players.',
       },
       {
         title: 'Shoot, challenge, replay',
-        text: 'Two replicas per lane, 20+ game scenarios and live scoring. Beginner or seasoned shooter, the target never lies.',
+        text: 'Two authentic airsoft rifles per lane, 20+ game scenarios and live scoring. Beginner or seasoned shooter, there is something for everyone!',
       },
       {
         title: 'Raise a glass before, during or after',
