@@ -22,14 +22,14 @@ const rows = order.map((day) => {
   return { label: d.venue.days[day], value: h.open ? `${fmt(h.open)} – ${fmt(h.close!)}` : d.venue.closed, closed: !h.open };
 });
 
-const lineColors: Record<string, string> = {
-  '3': '#9b993a',
-  '4': '#bb4d98',
-  '5': '#f28e42',
-  '7': '#f3a4ba',
-  '8': '#ceadd2',
-  '9': '#b6bd00',
-  '11': '#8c5e24',
+const lineColors: Record<string, [string, string]> = {
+  '3': ['#9b993a', '#012522'],
+  '4': ['#bb4d98', '#ffffff'],
+  '5': ['#f28e42', '#012522'],
+  '7': ['#f3a4ba', '#012522'],
+  '8': ['#ceadd2', '#012522'],
+  '9': ['#b6bd00', '#012522'],
+  '11': ['#8c5e24', '#ffffff'],
 };
 ---
 
@@ -66,7 +66,7 @@ const lineColors: Record<string, string> = {
               <li>
                 <span class="venue__lines">
                   {m.lines.map((l) => (
-                    <span class="line" style={`--line:${lineColors[l] ?? '#999'}`}>{l}</span>
+                    <span class="line" style={`--line:${(lineColors[l] ?? ['#999', '#012522'])[0]};--line-text:${(lineColors[l] ?? ['#999', '#012522'])[1]}`}>{l}</span>
                   ))}
                 </span>
                 <span class="venue__station">{m.name}</span>
@@ -183,7 +183,7 @@ const lineColors: Record<string, string> = {
     height: 1.5rem;
     border-radius: 50%;
     background: var(--line);
-    color: var(--green-950);
+    color: var(--line-text, var(--green-950));
     font-size: 0.8rem;
     font-weight: 700;
   }

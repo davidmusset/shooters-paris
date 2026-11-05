@@ -355,23 +355,23 @@ export const en: Dict = {
 
   menuPage: {
     title: 'The menu',
-    lead: 'Signature cocktails, beers, wines, soft drinks and sharing boards. The menu is served at the bar and on the lanes.',
+    lead: 'Cocktails, mocktails, draught beers, wines by the glass and sharing boards. The menu is served at the bar and on the lanes.',
     download: 'Download the menu (PDF)',
     sections: [
       {
-        title: 'Signature cocktails',
-        text: 'House creations around gin, rum and mezcal, plus the classics done right. Alcohol-free versions available.',
+        title: 'Cocktails and mocktails',
+        text: 'The classics done right: Basil Smash, Pornstar Martini, Espresso Martini, Moscow Mule, Strawberry Daiquiri, Aperol Spritz, Passion Sunrise (€12). Four house mocktails at €8, including the Virgin Ginger Mule and the Virgin Passion Sunrise.',
       },
       {
-        title: 'Beers, wines and softs',
-        text: 'A short, curated selection: draught, bottles, wines by the glass and craft soft drinks.',
+        title: 'Beers, wines and champagnes',
+        text: 'LBF Pale Ale and IPA on draught, Monaco, Picon beer, cider and alcohol-free beer. Organic wines by the glass from €6 (Rhône, Pays d’Oc, Corsica), fine bottles up to a Châteauneuf-du-Pape magnum, EPC Brut and Blanc de Blancs champagnes.',
       },
       {
         title: 'Boards and bites',
-        text: 'Charcuterie and cheese boards, hot bites and sweets, made to be shared between rounds.',
+        text: 'Homemade guacamole and hummus (€8), truffle stracciatella (€12), Italian charcuterie or aged cheese boards (€24) and the mixed board (€25), to share between rounds.',
       },
     ],
-    note: 'Prices and menu subject to change. Please drink responsibly.',
+    note: 'Prices include VAT, menu subject to change. Please drink responsibly.',
   },
 
   contactPage: {

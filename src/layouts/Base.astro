@@ -5,6 +5,8 @@ import '@fontsource/stix-two-text/700-italic.css';
 import '@fontsource-variable/source-sans-3/index.css';
 import '@fontsource/bodoni-moda/600.css';
 import '../styles/global.css';
+import stixItalicUrl from '@fontsource/stix-two-text/files/stix-two-text-latin-700-italic.woff2?url';
+import sourceSansUrl from '@fontsource-variable/source-sans-3/files/source-sans-3-latin-wght-normal.woff2?url';
 
 import Seo from '../components/Seo.astro';
 import Header from '../components/Header.astro';
@@ -35,6 +37,8 @@ const dict = t(lang);
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="theme-color" content="#003732" />
+    <link rel="preload" href={stixItalicUrl} as="font" type="font/woff2" crossorigin />
+    <link rel="preload" href={sourceSansUrl} as="font" type="font/woff2" crossorigin />
     <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
     <link rel="icon" href="/favicon.ico" sizes="32x32" />
     <link rel="apple-touch-icon" href="/apple-touch-icon.png" />

@@ -393,23 +393,23 @@ export const fr = {
 
   menuPage: {
     title: 'Le menu',
-    lead: 'Cocktails signature, bières, vins, softs et planches à partager. La carte est servie au bar et sur les pistes.',
+    lead: 'Cocktails, mocktails, bières pression, vins au verre et planches à partager. La carte est servie au bar et sur les pistes.',
     download: 'Télécharger le menu (PDF)',
     sections: [
       {
-        title: 'Cocktails signature',
-        text: 'Des créations maison autour du gin, du rhum et du mezcal, et les classiques exécutés comme il faut. Versions sans alcool disponibles.',
+        title: 'Cocktails et mocktails',
+        text: 'Les classiques exécutés comme il faut : Basil Smash, Pornstar Martini, Espresso Martini, Moscow Mule, Daiquiri fraise, Aperol Spritz, Passion Sunrise (12 €). Quatre mocktails maison à 8 €, dont le Virgin Ginger Mule et le Virgin Passion Sunrise.',
       },
       {
-        title: 'Bières, vins et softs',
-        text: 'Une sélection courte et choisie : pressions, bouteilles, vins au verre et softs artisanaux.',
+        title: 'Bières, vins et champagnes',
+        text: 'Pression LBF Pale Ale et IPA, Monaco, Picon bière, cidre et bière sans alcool. Vins bio au verre dès 6 € (Rhône, Pays d’Oc, Corse), belles bouteilles jusqu’au Châteauneuf-du-Pape en magnum, champagnes EPC Brut et Blanc de Blancs.',
       },
       {
         title: 'Planches et amuse-bouches',
-        text: 'Planches de charcuterie et de fromages, amuse-bouches chauds et douceurs, préparés pour être partagés entre deux manches.',
+        text: 'Guacamole et houmous maison (8 €), stracciatella à la truffe (12 €), planches de charcuteries d’Italie ou de fromages affinés (24 €) et la planche mixte (25 €), à partager entre deux manches.',
       },
     ],
-    note: 'Prix et carte susceptibles d’évoluer. L’abus d’alcool est dangereux pour la santé, à consommer avec modération.',
+    note: 'Prix TTC, carte susceptible d’évoluer. L’abus d’alcool est dangereux pour la santé, à consommer avec modération.',
   },
 
   contactPage: {
