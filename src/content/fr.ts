@@ -99,7 +99,7 @@ export const fr = {
   },
 
   hero: {
-    title: 'Paris airsoft shooting bar',
+    title: 'Airsoft shooting bar',
     lead:
       'Des répliques réalistes, des scénarios de jeu sur écran géant et des cocktails signature, le tout dans un cadre sécurisé à 3 minutes de République.',
     ctaBook: 'Réserver une piste',

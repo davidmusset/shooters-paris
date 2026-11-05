@@ -70,7 +70,7 @@ export const en: Dict = {
   },
 
   hero: {
-    title: 'Paris airsoft shooting bar',
+    title: 'Airsoft shooting bar',
     lead:
       'Realistic replicas, game scenarios on giant screens and signature cocktails, all in a safe venue 3 minutes from République.',
     ctaBook: 'Book a lane',
