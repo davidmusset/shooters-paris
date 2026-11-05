@@ -57,7 +57,7 @@ export const FACTS = {
   lanes: 8,
   minAge: 16,
   minPlayers: 2,
-  maxPlayers: 36,
+  maxPlayers: 32,
   sessionMinutes: 60,
   bbDiameterMm: 5,
   bbSpeedMs: 110,

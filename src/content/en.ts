@@ -81,7 +81,7 @@ export const en: Dict = {
   facts: [
     { value: '8', label: 'private lanes' },
     { value: 'From €35', label: 'per person, drink included' },
-    { value: '1 h', label: 'sessions, 2 to 36 players' },
+    { value: '1 h', label: 'sessions, 2 to 32 players' },
     { value: '16+', label: 'minimum age, 100% safe' },
   ],
 
@@ -90,7 +90,7 @@ export const en: Dict = {
     items: [
       {
         title: 'Book your lane',
-        text: 'Pick your time slot online in two minutes. Your private lane is waiting, for 2 to 36 players. Larger groups go private.',
+        text: 'Pick your time slot online in two minutes. Your private lane is waiting, for 2 to 32 players. Larger groups go private.',
       },
       {
         title: 'Shoot, challenge, replay',
@@ -241,7 +241,7 @@ export const en: Dict = {
       },
       {
         q: 'How many people per lane?',
-        a: '2 to 6 players per lane so everyone shoots enough. Beyond that we assign several lanes, up to 36 players at once. Even more? Ask for a private hire quote.',
+        a: '2 to 4 players per lane so everyone shoots enough. Beyond that we assign several lanes, up to 32 players at once. Even more? Ask for a private hire quote.',
       },
       {
         q: 'Can I come without shooting?',
@@ -434,11 +434,11 @@ export const en: Dict = {
   occasionPages: {
     teamBuilding: {
       name: 'Team building',
-      badge: '4 to 36 people · 1 to 2 h',
+      badge: '4 to 32 people · 1 to 2 h',
       short: 'Turn colleagues into teammates, or rivals. Team tournament with live ranking, cocktails and sharing boards.',
       metaTitle: 'Team building in Paris: shooting tournament and cocktails at Shooters (République)',
       metaDescription:
-        'An original team building in Paris 10e: shooting tournament on private lanes with live scores, cocktails and amuse-bouches. 4 to 36 people, from €35 per person, private hire available.',
+        'An original team building in Paris 10e: shooting tournament on private lanes with live scores, cocktails and amuse-bouches. 4 to 32 people, from €35 per person, private hire available.',
       title: 'A team building that puts everyone on the same line',
       lead: 'The shooting range flattens hierarchies: you do not win because you are the manager, you win because you are accurate. Team tournament, live scores, prize-giving at the bar.',
       why: [
@@ -450,18 +450,18 @@ export const en: Dict = {
       premiumExtra: ['Team tournament hosted by our staff', 'Teams built with you to mix departments', 'Company quote and invoice'],
       premiumNote: 'For groups of 12+, we recommend the Premium pack or a private hire.',
       faq: [
-        { q: 'How long should we plan?', a: 'Count 1 hour of shooting per lane. For 20 to 36 people, plan 2 hours on site with welcome, tournament and prize-giving.' },
+        { q: 'How long should we plan?', a: 'Count 1 hour of shooting per lane. For 20 to 32 people, plan 2 hours on site with welcome, tournament and prize-giving.' },
         { q: 'Can you invoice the company?', a: 'Yes. Quote, invoice and payment by transfer or card. A 30% deposit confirms the booking.' },
         { q: 'Can we add food?', a: 'Yes: board buffet, cocktail dinner formulas or open bar on quote.' },
       ],
     },
     birthday: {
       name: 'Birthday',
-      badge: '2 to 36 people · ages 16+',
+      badge: '2 to 32 people · ages 16+',
       short: 'A lane in your name, scores to settle and drinks between every round. Cake and decorations on request.',
       metaTitle: 'Birthday in Paris: celebrate at the Shooters shooting range bar (République)',
       metaDescription:
-        'Celebrate your birthday at Shooters Paris: private shooting lane, live scores, cocktails and amuse-bouches. 2 to 36 people from age 16, 2 minutes from République.',
+        'Celebrate your birthday at Shooters Paris: private shooting lane, live scores, cocktails and amuse-bouches. 2 to 32 people from age 16, 2 minutes from République.',
       title: 'A birthday you will not celebrate twice',
       lead: 'Forget the reserved table in a packed bar. At Shooters, the gang gets its lane, its leaderboard and a bar two metres away.',
       why: [
@@ -499,11 +499,11 @@ export const en: Dict = {
     },
     afterwork: {
       name: 'Afterwork / corporate',
-      badge: '4 to 36 people · from 6 pm',
+      badge: '4 to 32 people · from 6 pm',
       short: 'Six o’clock, the day is done. A lane for the team, a board to share, and the week is already forgotten.',
       metaTitle: 'Afterwork in Paris 10e: shooting range and cocktails with colleagues at Shooters',
       metaDescription:
-        'An original afterwork near République: private shooting lane for the team, cocktails and sharing boards. 4 to 36 people, from €35 per person. Corporate evenings on quote.',
+        'An original afterwork near République: private shooting lane for the team, cocktails and sharing boards. 4 to 32 people, from €35 per person. Corporate evenings on quote.',
       title: 'The afterwork that hits the mark',
       lead: 'A one-hour slot after the office, a lane for the team and the bar for what comes next. Easy to organise, impossible to forget.',
       why: [
@@ -514,7 +514,7 @@ export const en: Dict = {
       premiumExtra: ['Mini inter-team tournament with ranking', 'Adjacent lanes reserved for the whole team', 'Company quote and invoice'],
       premiumNote: 'Corporate evenings, launches and private hire: write to us for a quote.',
       faq: [
-        { q: 'Can we book several lanes?', a: 'Yes, up to 8 lanes at once, i.e. 36 players. Beyond that, we go private.' },
+        { q: 'Can we book several lanes?', a: 'Yes, up to 8 lanes at once, i.e. 32 players. Beyond that, we go private.' },
         { q: 'Do you invoice companies?', a: 'Yes, quote and invoice on request.' },
       ],
     },

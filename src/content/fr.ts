@@ -110,7 +110,7 @@ export const fr = {
   facts: [
     { value: '8', label: 'pistes privées' },
     { value: 'Dès 35 €', label: 'par personne, boisson incluse' },
-    { value: '1 h', label: 'de session, 2 à 36 joueurs' },
+    { value: '1 h', label: 'de session, 2 à 32 joueurs' },
     { value: '16 ans', label: 'âge minimum, 100 % sécurisé' },
   ],
 
@@ -119,7 +119,7 @@ export const fr = {
     items: [
       {
         title: 'Réservez votre piste',
-        text: 'Choisissez votre créneau en ligne en deux minutes. Votre piste privée vous attend, de 2 à 36 joueurs. Au-delà, on privatise.',
+        text: 'Choisissez votre créneau en ligne en deux minutes. Votre piste privée vous attend, de 2 à 32 joueurs. Au-delà, on privatise.',
       },
       {
         title: 'Tirez, défiez, rejouez',
@@ -275,7 +275,7 @@ export const fr = {
       },
       {
         q: 'Combien de personnes par piste ?',
-        a: 'De 2 à 6 joueurs par piste pour que tout le monde tire suffisamment. Au-delà, on vous attribue plusieurs pistes, jusqu’à 36 joueurs en simultané. Plus nombreux ? Demandez un devis de privatisation.',
+        a: 'De 2 à 4 joueurs par piste pour que tout le monde tire suffisamment. Au-delà, on vous attribue plusieurs pistes, jusqu’à 32 joueurs en simultané. Plus nombreux ? Demandez un devis de privatisation.',
       },
       {
         q: 'Peut-on venir sans tirer ?',
@@ -472,11 +472,11 @@ export const fr = {
   occasionPages: {
     teamBuilding: {
       name: 'Team building',
-      badge: '4 à 36 personnes · 1 h à 2 h',
+      badge: '4 à 32 personnes · 1 h à 2 h',
       short: 'Transformez vos collègues en coéquipiers, ou en rivaux. Tournoi par équipes avec classement en direct, cocktails et planches à partager.',
       metaTitle: 'Team building à Paris : tournoi de tir et cocktails chez Shooters (République)',
       metaDescription:
-        'Team building original à Paris 10e : tournoi de tir sur pistes privées avec scores en direct, cocktails et amuse-bouches. De 4 à 36 personnes, dès 35 € par personne, privatisation possible.',
+        'Team building original à Paris 10e : tournoi de tir sur pistes privées avec scores en direct, cocktails et amuse-bouches. De 4 à 32 personnes, dès 35 € par personne, privatisation possible.',
       title: 'Un team building qui met tout le monde sur la même ligne',
       lead: 'Le stand de tir nivelle les hiérarchies : on ne gagne pas parce qu’on est manager, on gagne parce qu’on est précis. Tournoi par équipes, scores en direct, remise des prix au bar.',
       why: [
@@ -488,18 +488,18 @@ export const fr = {
       premiumExtra: ['Tournoi par équipes animé par notre équipe', 'Composition des équipes avec vous pour mélanger les services', 'Devis et facture entreprise'],
       premiumNote: 'Pour les groupes de plus de 12 personnes, nous recommandons le pack Premium ou une privatisation.',
       faq: [
-        { q: 'Combien de temps prévoir ?', a: 'Comptez 1 h de tir par piste. Pour un groupe de 20 à 36 personnes, prévoyez 2 h sur place avec l’accueil, le tournoi et la remise des prix.' },
+        { q: 'Combien de temps prévoir ?', a: 'Comptez 1 h de tir par piste. Pour un groupe de 20 à 32 personnes, prévoyez 2 h sur place avec l’accueil, le tournoi et la remise des prix.' },
         { q: 'Pouvez-vous facturer l’entreprise ?', a: 'Oui. Devis, facture et paiement par virement ou carte. Un acompte de 30 % confirme la réservation.' },
         { q: 'Peut-on ajouter un repas ?', a: 'Oui : buffet de planches, formules cocktail dînatoire ou open bar sur devis.' },
       ],
     },
     birthday: {
       name: 'Anniversaire',
-      badge: '2 à 36 personnes · dès 16 ans',
+      badge: '2 à 32 personnes · dès 16 ans',
       short: 'Une piste à votre nom, des scores à départager et de quoi trinquer entre chaque manche. Gâteau et décoration possibles sur demande.',
       metaTitle: 'Anniversaire à Paris : fêtez-le au bar stand de tir Shooters (République)',
       metaDescription:
-        'Fêtez votre anniversaire chez Shooters Paris : piste de tir privée, scores en direct, cocktails et amuse-bouches. De 2 à 36 personnes dès 16 ans, à 2 minutes de République.',
+        'Fêtez votre anniversaire chez Shooters Paris : piste de tir privée, scores en direct, cocktails et amuse-bouches. De 2 à 32 personnes dès 16 ans, à 2 minutes de République.',
       title: 'Un anniversaire qu’on ne fête pas deux fois',
       lead: 'Oubliez la table réservée dans un bar bondé. Chez Shooters, la bande a sa piste, son tableau des scores et son bar à deux mètres.',
       why: [
@@ -537,11 +537,11 @@ export const fr = {
     },
     afterwork: {
       name: 'Afterwork / corporate',
-      badge: '4 à 36 personnes · dès 18 h',
+      badge: '4 à 32 personnes · dès 18 h',
       short: 'Dix-huit heures, la journée est finie. Une piste pour l’équipe, une planche à partager, et la semaine est déjà oubliée.',
       metaTitle: 'Afterwork à Paris 10e : stand de tir et cocktails entre collègues chez Shooters',
       metaDescription:
-        'Afterwork original près de République : piste de tir privée pour l’équipe, cocktails et planches à partager. De 4 à 36 personnes, dès 35 € par personne. Soirées d’entreprise sur devis.',
+        'Afterwork original près de République : piste de tir privée pour l’équipe, cocktails et planches à partager. De 4 à 32 personnes, dès 35 € par personne. Soirées d’entreprise sur devis.',
       title: 'L’afterwork qui vise juste',
       lead: 'Un créneau d’une heure après le bureau, une piste pour l’équipe et le bar pour la suite. Simple à organiser, impossible à oublier.',
       why: [
@@ -552,7 +552,7 @@ export const fr = {
       premiumExtra: ['Mini-tournoi inter-équipes avec classement', 'Pistes réservées côte à côte pour toute l’équipe', 'Devis et facture entreprise'],
       premiumNote: 'Soirées d’entreprise, lancements et privatisations : écrivez-nous pour un devis.',
       faq: [
-        { q: 'Peut-on réserver plusieurs pistes ?', a: 'Oui, jusqu’à 8 pistes en simultané, soit 36 joueurs. Au-delà, on privatise.' },
+        { q: 'Peut-on réserver plusieurs pistes ?', a: 'Oui, jusqu’à 8 pistes en simultané, soit 32 joueurs. Au-delà, on privatise.' },
         { q: 'Facturez-vous l’entreprise ?', a: 'Oui, devis et facture sur simple demande.' },
       ],
     },
