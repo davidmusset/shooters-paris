@@ -99,7 +99,7 @@ export const fr = {
   },
 
   hero: {
-    title: 'Le premier Airsoft shooting bar de France',
+    title: 'Paris airsoft shooting bar',
     lead:
       'Des répliques réalistes, des scénarios de jeu sur écran géant et des cocktails signature, le tout dans un cadre sécurisé à 3 minutes de République.',
     ctaBook: 'Réserver une piste',
