@@ -77,7 +77,7 @@ const f = d.contactPage.form;
         <h2>{d.contactPage.directTitle}</h2>
         <p>{d.contactPage.directText}</p>
         <p><a class="btn btn--green" href={`mailto:${CONTACT.email}`}>{CONTACT.email}</a></p>
-        {CONTACT.phone && <p><a href={`tel:${CONTACT.phone.replace(/\s/g, '')}`}>{CONTACT.phone}</a></p>}
+        {CONTACT.phone && <p><a class="btn btn--outline" href={`tel:${CONTACT.phoneIntl}`}>{CONTACT.phone}</a></p>}
       </aside>
     </div>
   </section>

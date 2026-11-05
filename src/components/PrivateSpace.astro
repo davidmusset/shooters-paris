@@ -1,0 +1,51 @@
+---
+import { Image } from 'astro:assets';
+import { t } from '../content/i18n';
+import { path, type Lang } from '../content/routes';
+import { photo, alt } from '../content/photos';
+
+interface Props {
+  lang: Lang;
+}
+const { lang } = Astro.props;
+const d = t(lang);
+---
+
+<section class="section theme-deep private">
+  <div class="container private__grid">
+    <div class="private__text">
+      <h2>{d.privateSpace.title}</h2>
+      <p class="lead">{d.privateSpace.text}</p>
+      <p><a class="btn btn--peach" href={path('contact', lang)}>{d.privateSpace.cta}</a></p>
+    </div>
+    <div class="arch arch--frame private__media">
+      <Image src={photo('player-table-64')} alt={alt('player-table-64', lang)} widths={[480, 760, 1000]} sizes="(max-width: 900px) 90vw, 40vw" />
+    </div>
+  </div>
+</section>
+
+<style>
+  .private__grid {
+    display: grid;
+    grid-template-columns: 1.2fr 0.8fr;
+    gap: clamp(2rem, 5vw, 5rem);
+    align-items: center;
+  }
+  .private__text {
+    display: grid;
+    gap: 1.25rem;
+    justify-items: start;
+    max-width: 36rem;
+  }
+  .private__media {
+    aspect-ratio: 4 / 5;
+    max-width: 420px;
+    width: 100%;
+    justify-self: center;
+  }
+  @media (max-width: 900px) {
+    .private__grid {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>

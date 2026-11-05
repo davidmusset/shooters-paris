@@ -23,7 +23,7 @@ const bookHref = BOOKING.externalUrl || path('book', lang);
         {CONTACT.address.street}<br />
         {CONTACT.address.postalCode} {CONTACT.address.city}<br />
         <a href={`mailto:${CONTACT.email}`}>{CONTACT.email}</a>
-        {CONTACT.phone && <><br /><a href={`tel:${CONTACT.phone.replace(/\s/g, '')}`}>{CONTACT.phone}</a></>}
+        {CONTACT.phone && <><br /><a href={`tel:${CONTACT.phoneIntl}`}>{CONTACT.phone}</a></>}
       </address>
       {SOCIAL.instagram && (
         <a class="site-footer__social" href={SOCIAL.instagram} rel="noopener" target="_blank" aria-label={d.footer.instagram}>

@@ -19,7 +19,9 @@ export const BRAND = {
 export const CONTACT = {
   email: 'paris@theshootingbar.com',
   /** Numéro à renseigner quand la ligne sera ouverte (format international, ex. +33 1 23 45 67 89). */
-  phone: '',
+  phone: '06 36 90 96 64',
+  /** Même numéro au format international (liens tel: et données structurées). */
+  phoneIntl: '+33636909664',
   address: {
     street: '27 boulevard de Magenta',
     postalCode: '75010',

@@ -6,6 +6,7 @@ import Packs from '../components/Packs.astro';
 import Faq from '../components/Faq.astro';
 import Occasions from '../components/Occasions.astro';
 import CtaBand from '../components/CtaBand.astro';
+import PrivateSpace from '../components/PrivateSpace.astro';
 import { t } from '../content/i18n';
 import { ROUTES, path, type Lang, type OccasionKey } from '../content/routes';
 import { photo, alt, OCCASION_HERO, OCCASION_PHOTO } from '../content/photos';
@@ -61,6 +62,8 @@ const breadcrumb = {
   </section>
 
   <Packs lang={lang} theme="dark" title={c.packsTitle} premiumExtra={o.premiumExtra} standardExtra={o.standardExtra} premiumNote={o.premiumNote} />
+
+  {occasion !== 'duo' && <PrivateSpace lang={lang} />}
 
   <Faq lang={lang} items={o.faq} title={c.faqTitle} theme="cream" />
 

@@ -23,7 +23,7 @@ export const en: Dict = {
     home: {
       title: 'Shooters Paris: shooting range bar & cocktails near République (Paris 10e)',
       description:
-        "France's first shooting range bar. 8 private lanes, 1:1 airsoft replicas, 10+ game scenarios and a cocktail bar, 2 minutes from République. From €35 per person, ages 16+.",
+        "France's first shooting range bar. 8 private lanes, 1:1 airsoft replicas, 20+ game scenarios and a cocktail bar, 3 minutes from République. From €35 per person, ages 16+.",
     },
     concept: {
       title: 'The Shooters concept: a shooting range hidden behind a cocktail bar',
@@ -43,7 +43,7 @@ export const en: Dict = {
     venue: {
       title: 'Find Shooters Paris: 27 boulevard de Magenta, métro République',
       description:
-        'Address, opening hours, métro access and practical information for Shooters, 27 boulevard de Magenta, Paris 10e, 2 minutes from place de la République.',
+        'Address, opening hours, métro access and practical information for Shooters, 27 boulevard de Magenta, Paris 10e, 3 minutes from place de la République.',
     },
     faq: {
       title: 'Shooters Paris FAQ: minimum age, safety, booking, groups',
@@ -72,10 +72,10 @@ export const en: Dict = {
   hero: {
     title: "France's first shooting range bar",
     lead:
-      'Realistic replicas, game scenarios on giant screens and signature cocktails, all in a safe venue 2 minutes from République.',
+      'Realistic replicas, game scenarios on giant screens and signature cocktails, all in a safe venue 3 minutes from République.',
     ctaBook: 'Book a lane',
     ctaHow: 'How does it work?',
-    opening: 'Opening November 2026 · 27 boulevard de Magenta, Paris 10e',
+    opening: 'Opening 26 November 2026 · 27 boulevard de Magenta, Paris 10e',
   },
 
   facts: [
@@ -94,7 +94,7 @@ export const en: Dict = {
       },
       {
         title: 'Shoot, challenge, replay',
-        text: 'Two replicas per lane, 10+ game scenarios and live scoring. Beginner or seasoned shooter, the target never lies.',
+        text: 'Two replicas per lane, 20+ game scenarios and live scoring. Beginner or seasoned shooter, the target never lies.',
       },
       {
         title: 'Raise a glass before, during or after',
@@ -113,7 +113,7 @@ export const en: Dict = {
   },
 
   games: {
-    title: 'Three worlds, 10+ scenarios',
+    title: 'Three worlds, 20+ scenarios',
     lead: 'Every lane gives access to all the games. Start with precision, finish with the tournament.',
     items: [
       {
@@ -164,7 +164,7 @@ export const en: Dict = {
         'Full equipment included',
         '1 welcome drink per person',
         'Amuse-bouche buffet',
-        '2 replicas, 10+ game scenarios',
+        '2 replicas, 20+ game scenarios',
       ],
       from: 'From 2 players',
       cta: 'Book Standard',
@@ -189,8 +189,8 @@ export const en: Dict = {
       name: 'Tailor-made',
       price: 'On quote',
       per: '',
-      intro: 'Groups of 12+, full or partial private hire, custom formats.',
-      items: ['Up to 8 lanes at once', 'Private hire of the bar', 'Custom catering and open bar', 'Tournament hosted by our team'],
+      intro: 'A private room for your group, or the whole venue.',
+      items: ['Private room of 80 m² with 3 lanes, up to 12 people', 'Full private hire: 8 lanes, up to 32 players', 'Custom catering and open bar', 'Tournament hosted by our team'],
       from: 'Reply within one business day',
       cta: 'Request a quote',
     } as PackContent,
@@ -265,7 +265,7 @@ export const en: Dict = {
       },
       {
         q: 'Do you host private events?',
-        a: 'Yes: team buildings, birthdays, bachelor and bachelorette parties, corporate evenings and full private hire. Write to us with the date and headcount, we reply within one business day.',
+        a: 'Yes: team buildings, birthdays, bachelor and bachelorette parties and corporate evenings. A private room of 80 m² with 3 lanes hosts up to 12 people, and the whole venue can be hired (8 lanes, 32 players). Write to us with the date and headcount, we reply within one business day.',
       },
     ],
   },
@@ -273,11 +273,11 @@ export const en: Dict = {
   venue: {
     title: 'Find Shooters',
     addressLine: '27 boulevard de Magenta, 75010 Paris',
-    nearby: 'A 2-minute walk from place de la République',
+    nearby: 'Right by métro Jacques Bonsergent, 3 minutes from République',
     metroTitle: 'Métro',
     metro: [
+      { name: 'Jacques Bonsergent', lines: ['5'], walk: 'at the door' },
       { name: 'République', lines: ['3', '5', '8', '9', '11'], walk: '3 min' },
-      { name: 'Jacques Bonsergent', lines: ['5'], walk: '4 min' },
       { name: "Gare de l'Est", lines: ['4', '5', '7'], walk: '8 min' },
     ],
     hoursTitle: 'Opening hours',
@@ -285,7 +285,7 @@ export const en: Dict = {
     days: ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'],
     hoursSummary: ['Tuesday to Saturday: 3 pm to midnight', 'Sunday: 3 pm to 10 pm', 'Closed on Monday'],
     practicalTitle: 'Practical info',
-    practical: ['Shooting from age 16', 'Protective glasses provided', 'Card, cash and meal vouchers accepted at the bar'],
+    practical: ['Shooting from age 16', 'Protective glasses provided', 'Wheelchair accessible', 'Bar open to everyone, no booking needed'],
     mapCta: 'Open in Google Maps',
     cta: 'Book a lane',
   },
@@ -324,7 +324,7 @@ export const en: Dict = {
         title: 'One lane, one screen, one score',
         text: [
           'Each lane has two replicas, a giant screen and a tablet to launch scenarios. You pick the game, the level, the mode (solo, duel, team) and the score shows live.',
-          '10+ scenarios are available from day one, from the classic range to wild ducks and bottle shooting. Levels unlock as your accuracy improves.',
+          '20+ scenarios are available from day one, from the classic range to wild ducks and bottle shooting. Levels unlock as your accuracy improves.',
         ],
       },
       {
@@ -347,7 +347,7 @@ export const en: Dict = {
       'Two replicas and full equipment',
       'Protective glasses',
       'Safety briefing and help from our team',
-      '10+ game scenarios and live scores',
+      '20+ game scenarios and live scores',
     ],
     giftTitle: 'Give Shooters',
     giftText: 'A gift card valid for one year, for a session for two or the whole gang. Online soon, available now at the venue.',
@@ -372,6 +372,12 @@ export const en: Dict = {
       },
     ],
     note: 'Prices include VAT, menu subject to change. Please drink responsibly.',
+  },
+
+  privateSpace: {
+    title: 'The private room: 80 m², 3 lanes, up to 12 people',
+    text: 'A room just for your group, with its three shooting lanes, its table and dedicated service. Ideal for a birthday, a team afterwork or a bachelor party, without hiring the whole venue. Beyond 12 people, the entire bar can be hired with its 8 lanes.',
+    cta: 'Request a quote',
   },
 
   contactPage: {
@@ -445,7 +451,7 @@ export const en: Dict = {
         { title: 'A format that always works', text: 'No need to be sporty or a gamer. The briefing takes five minutes, the first scenario gets everyone laughing, the tournament does the rest.' },
         { title: 'Mixed teams', text: 'We build the teams with you to break silos. Each round is short: everyone shoots, everyone counts.' },
         { title: 'A real bar moment', text: 'Prizes are handed out at the counter, trophy in hand, over cocktails and boards. That is where conversations carry on.' },
-        { title: 'Easy to organise', text: 'One contact, a quote within one business day, one invoice. 2 minutes from République, reachable from all of Île-de-France.' },
+        { title: 'Easy to organise', text: 'One contact, a quote within one business day, one invoice. 3 minutes from République, reachable from all of Île-de-France.' },
       ],
       premiumExtra: ['Team tournament hosted by our staff', 'Teams built with you to mix departments', 'Company quote and invoice'],
       premiumNote: 'For groups of 12+, we recommend the Premium pack or a private hire.',
@@ -461,7 +467,7 @@ export const en: Dict = {
       short: 'A lane in your name, scores to settle and drinks between every round. Cake and decorations on request.',
       metaTitle: 'Birthday in Paris: celebrate at the Shooters shooting range bar (République)',
       metaDescription:
-        'Celebrate your birthday at Shooters Paris: private shooting lane, live scores, cocktails and amuse-bouches. 2 to 32 people from age 16, 2 minutes from République.',
+        'Celebrate your birthday at Shooters Paris: private shooting lane, live scores, cocktails and amuse-bouches. 2 to 32 people from age 16, 3 minutes from République.',
       title: 'A birthday you will not celebrate twice',
       lead: 'Forget the reserved table in a packed bar. At Shooters, the gang gets its lane, its leaderboard and a bar two metres away.',
       why: [
@@ -488,7 +494,7 @@ export const en: Dict = {
       why: [
         { title: 'A highlight, not another bar', text: 'Competition makes the memories: dares are settled at the target and the leaderboard keeps the record.' },
         { title: 'A ritual for the lucky one', text: 'Costume provided in the Premium pack, a round of shots for the whole gang and a solo final round in front of everyone.' },
-        { title: 'Easy to fit in the day', text: '2 minutes from République, next to the bars of canal Saint-Martin and the 11e. Ideal early evening.' },
+        { title: 'Easy to fit in the day', text: '3 minutes from République, next to the bars of canal Saint-Martin and the 11e. Ideal early evening.' },
       ],
       premiumExtra: ['Round of shots for the whole gang', 'Costume for the lucky one', 'Solo final round for the lucky one'],
       faq: [
@@ -509,7 +515,7 @@ export const en: Dict = {
       why: [
         { title: 'Short and effective', text: 'One hour is enough for a full session. Arrive at 6.30 pm, raise a glass at 7.45 pm.' },
         { title: 'For every team', text: 'No skill level required, no special outfit. The game puts everyone at ease, newcomers included.' },
-        { title: 'A convenient address', text: '2 minutes from République, served by 5 métro lines. Your colleagues get home easily.' },
+        { title: 'A convenient address', text: '3 minutes from République, served by 5 métro lines. Your colleagues get home easily.' },
       ],
       premiumExtra: ['Mini inter-team tournament with ranking', 'Adjacent lanes reserved for the whole team', 'Company quote and invoice'],
       premiumNote: 'Corporate evenings, launches and private hire: write to us for a quote.',
@@ -524,7 +530,7 @@ export const en: Dict = {
       short: 'A lane for two, a duel to settle and two cocktails to celebrate the win or soften the loss.',
       metaTitle: 'A night out for two in Paris: a shooting lane for two at Shooters (République)',
       metaDescription:
-        'A date idea in Paris: a private shooting lane for a one-hour duel, signature cocktails and amuse-bouches. From €35 per person, 2 minutes from République.',
+        'A date idea in Paris: a private shooting lane for a one-hour duel, signature cocktails and amuse-bouches. From €35 per person, 3 minutes from République.',
       title: 'For two, a replica each',
       lead: 'A date, a couple challenge or a night out with a friend: the lane is yours for an hour, with the bar right next door for the debrief.',
       why: [
@@ -544,7 +550,7 @@ export const en: Dict = {
       short: 'No particular occasion, just the urge to meet somewhere other than leaning on a counter. A lane of your own, a replica each, a score to defend.',
       metaTitle: 'A night out with friends in Paris: Shooters shooting range bar, République',
       metaDescription:
-        'A different night out with friends in Paris 10e: a private shooting lane for your group, 10+ scenarios, live scores, cocktails and amuse-bouches from €35 per person.',
+        'A different night out with friends in Paris 10e: a private shooting lane for your group, 20+ scenarios, live scores, cocktails and amuse-bouches from €35 per person.',
       title: 'With friends, the lane is yours',
       lead: 'Evenings and weekends, an hour of play on your private lane then the bar to carry on. 2 to 12 people, online booking.',
       why: [

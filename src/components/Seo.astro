@@ -46,7 +46,7 @@ const business = {
   image: abs(image),
   logo: abs('/brand/blason.png'),
   email: CONTACT.email,
-  ...(CONTACT.phone ? { telephone: CONTACT.phone } : {}),
+  ...(CONTACT.phoneIntl ? { telephone: CONTACT.phoneIntl } : {}),
   priceRange: `€${FACTS.priceFrom}-€${FACTS.pricePremium}`,
   currenciesAccepted: 'EUR',
   address: {

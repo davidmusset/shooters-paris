@@ -47,7 +47,7 @@ export const fr = {
     home: {
       title: 'Shooters Paris : bar stand de tir & cocktails, République (Paris 10e)',
       description:
-        "Le premier bar stand de tir de France. 8 pistes privées, répliques airsoft 1:1, plus de 10 scénarios de jeu et un bar à cocktails, à 2 minutes de République. Dès 35 € par personne, à partir de 16 ans.",
+        "Le premier bar stand de tir de France. 8 pistes privées, répliques airsoft 1:1, plus de 20 scénarios de jeu et un bar à cocktails, à 3 minutes de République. Dès 35 € par personne, à partir de 16 ans.",
     },
     concept: {
       title: 'Le concept Shooters : un stand de tir caché derrière un bar à cocktails',
@@ -101,10 +101,10 @@ export const fr = {
   hero: {
     title: 'Le premier bar stand de tir de France',
     lead:
-      'Des répliques réalistes, des scénarios de jeu sur écran géant et des cocktails signature, le tout dans un cadre sécurisé à 2 minutes de République.',
+      'Des répliques réalistes, des scénarios de jeu sur écran géant et des cocktails signature, le tout dans un cadre sécurisé à 3 minutes de République.',
     ctaBook: 'Réserver une piste',
     ctaHow: 'Comment ça marche ?',
-    opening: 'Ouverture novembre 2026 · 27 boulevard de Magenta, Paris 10e',
+    opening: 'Ouverture le 26 novembre 2026 · 27 boulevard de Magenta, Paris 10e',
   },
 
   facts: [
@@ -123,7 +123,7 @@ export const fr = {
       },
       {
         title: 'Tirez, défiez, rejouez',
-        text: 'Deux répliques par piste, plus de 10 scénarios de jeu et un score en temps réel. Débutant ou tireur confirmé, la cible ne ment pas.',
+        text: 'Deux répliques par piste, plus de 20 scénarios de jeu et un score en temps réel. Débutant ou tireur confirmé, la cible ne ment pas.',
       },
       {
         title: 'Trinquez avant, pendant ou après',
@@ -142,7 +142,7 @@ export const fr = {
   },
 
   games: {
-    title: 'Trois univers, plus de 10 scénarios',
+    title: 'Trois univers, plus de 20 scénarios',
     lead: 'Chaque piste donne accès à tous les jeux. On commence par la précision, on finit par le tournoi.',
     items: [
       {
@@ -193,7 +193,7 @@ export const fr = {
         'Équipement complet inclus',
         '1 boisson de bienvenue par personne',
         'Buffet d’amuse-bouches',
-        '2 répliques, plus de 10 scénarios de jeu',
+        '2 répliques, plus de 20 scénarios de jeu',
       ],
       from: 'Dès 2 joueurs',
       cta: 'Réserver en Standard',
@@ -218,10 +218,10 @@ export const fr = {
       name: 'Sur mesure',
       price: 'Sur devis',
       per: '',
-      intro: 'Groupes de plus de 12 personnes, privatisation totale ou partielle, formats sur mesure.',
+      intro: 'Un espace privé pour votre groupe, ou le lieu entier.',
       items: [
-        'Jusqu’à 8 pistes en simultané',
-        'Privatisation du bar',
+        'Espace privé de 80 m² avec 3 pistes, jusqu’à 12 personnes',
+        'Privatisation totale : 8 pistes, jusqu’à 32 joueurs',
         'Restauration et open bar sur mesure',
         'Animation du tournoi par notre équipe',
       ],
@@ -299,7 +299,7 @@ export const fr = {
       },
       {
         q: 'Organisez-vous des événements privés ?',
-        a: 'Oui : team building, anniversaires, EVG/EVJF, soirées d’entreprise et privatisations totales. Écrivez-nous avec la date et le nombre de personnes, nous répondons sous 24 h ouvrées.',
+        a: 'Oui : team building, anniversaires, EVG/EVJF et soirées d’entreprise. Un espace privé de 80 m² avec 3 pistes accueille jusqu’à 12 personnes, et le lieu entier se privatise (8 pistes, 32 joueurs). Écrivez-nous avec la date et le nombre de personnes, nous répondons sous 24 h ouvrées.',
       },
     ],
   },
@@ -307,11 +307,11 @@ export const fr = {
   venue: {
     title: 'Venir chez Shooters',
     addressLine: '27 boulevard de Magenta, 75010 Paris',
-    nearby: 'À 2 minutes à pied de la place de la République',
+    nearby: 'Au pied du métro Jacques Bonsergent, à 3 minutes de République',
     metroTitle: 'Métro',
     metro: [
+      { name: 'Jacques Bonsergent', lines: ['5'], walk: 'au pied' },
       { name: 'République', lines: ['3', '5', '8', '9', '11'], walk: '3 min' },
-      { name: 'Jacques Bonsergent', lines: ['5'], walk: '4 min' },
       { name: 'Gare de l’Est', lines: ['4', '5', '7'], walk: '8 min' },
     ],
     hoursTitle: 'Horaires',
@@ -322,7 +322,8 @@ export const fr = {
     practical: [
       'Accès à partir de 16 ans pour le tir',
       'Lunettes de protection fournies',
-      'Paiement par carte, espèces et tickets restaurant pour le bar',
+      'Accès PMR',
+      'Bar ouvert à tous, sans réservation',
     ],
     mapCta: 'Ouvrir dans Google Maps',
     cta: 'Réserver une piste',
@@ -362,7 +363,7 @@ export const fr = {
         title: 'Une piste, un écran, un score',
         text: [
           'Chaque piste est équipée de deux répliques, d’un écran géant et d’une tablette pour lancer les scénarios. Vous choisissez le jeu, le niveau, le mode (solo, duel, équipe) et le score s’affiche en direct.',
-          'Plus de 10 scénarios sont disponibles dès le premier jour, du stand classique aux canards sauvages en passant par le tir sur bouteilles. Les niveaux se débloquent à mesure que votre précision progresse.',
+          'Plus de 20 scénarios sont disponibles dès le premier jour, du stand classique aux canards sauvages en passant par le tir sur bouteilles. Les niveaux se débloquent à mesure que votre précision progresse.',
         ],
       },
       {
@@ -385,7 +386,7 @@ export const fr = {
       'Deux répliques et l’équipement complet',
       'Les lunettes de protection',
       'Le briefing sécurité et l’aide de notre équipe',
-      'Plus de 10 scénarios de jeu et les scores en direct',
+      'Plus de 20 scénarios de jeu et les scores en direct',
     ],
     giftTitle: 'Offrir Shooters',
     giftText: 'Une carte cadeau valable un an, pour une session en duo ou pour toute la bande. Disponible bientôt en ligne, dès maintenant sur place.',
@@ -410,6 +411,12 @@ export const fr = {
       },
     ],
     note: 'Prix TTC, carte susceptible d’évoluer. L’abus d’alcool est dangereux pour la santé, à consommer avec modération.',
+  },
+
+  privateSpace: {
+    title: 'L’espace privé : 80 m², 3 pistes, jusqu’à 12 personnes',
+    text: 'Une salle rien que pour votre groupe, avec ses trois pistes de tir, sa table et son service dédié. Idéale pour un anniversaire, un afterwork d’équipe ou un EVG, sans privatiser tout le lieu. Au-delà de 12 personnes, le bar entier se privatise avec ses 8 pistes.',
+    cta: 'Demander un devis',
   },
 
   contactPage: {
@@ -483,7 +490,7 @@ export const fr = {
         { title: 'Un format qui marche à tous les coups', text: 'Pas besoin d’être sportif ni gamer. Le briefing prend cinq minutes, le premier scénario fait rire tout le monde, le tournoi fait le reste.' },
         { title: 'Des équipes mélangées', text: 'Nous composons les équipes avec vous pour casser les silos. Chaque manche est courte : tout le monde tire, tout le monde compte.' },
         { title: 'Un vrai moment de bar', text: 'La remise des prix se fait au comptoir, trophée en main, autour des cocktails et des planches. C’est là que les conversations continuent.' },
-        { title: 'Simple à organiser', text: 'Un seul interlocuteur, un devis sous 24 h ouvrées, une facture. À 2 minutes de République, accessible de toute l’Île-de-France.' },
+        { title: 'Simple à organiser', text: 'Un seul interlocuteur, un devis sous 24 h ouvrées, une facture. À 3 minutes de République, accessible de toute l’Île-de-France.' },
       ],
       premiumExtra: ['Tournoi par équipes animé par notre équipe', 'Composition des équipes avec vous pour mélanger les services', 'Devis et facture entreprise'],
       premiumNote: 'Pour les groupes de plus de 12 personnes, nous recommandons le pack Premium ou une privatisation.',
@@ -499,7 +506,7 @@ export const fr = {
       short: 'Une piste à votre nom, des scores à départager et de quoi trinquer entre chaque manche. Gâteau et décoration possibles sur demande.',
       metaTitle: 'Anniversaire à Paris : fêtez-le au bar stand de tir Shooters (République)',
       metaDescription:
-        'Fêtez votre anniversaire chez Shooters Paris : piste de tir privée, scores en direct, cocktails et amuse-bouches. De 2 à 32 personnes dès 16 ans, à 2 minutes de République.',
+        'Fêtez votre anniversaire chez Shooters Paris : piste de tir privée, scores en direct, cocktails et amuse-bouches. De 2 à 32 personnes dès 16 ans, à 3 minutes de République.',
       title: 'Un anniversaire qu’on ne fête pas deux fois',
       lead: 'Oubliez la table réservée dans un bar bondé. Chez Shooters, la bande a sa piste, son tableau des scores et son bar à deux mètres.',
       why: [
@@ -526,7 +533,7 @@ export const fr = {
       why: [
         { title: 'Un moment fort, pas un énième bar', text: 'La compétition crée les souvenirs : les gages se jouent à la cible et le tableau des scores garde la trace.' },
         { title: 'Un rituel pour l’heureux élu', text: 'Déguisement fourni dans le pack Premium, tournée de shooters pour toute la bande et manche finale en solo devant tout le monde.' },
-        { title: 'Facile à caler dans la journée', text: 'À 2 minutes de République, à côté des bars du canal Saint-Martin et du 11e. Idéal en début de soirée.' },
+        { title: 'Facile à caler dans la journée', text: 'À 3 minutes de République, à côté des bars du canal Saint-Martin et du 11e. Idéal en début de soirée.' },
       ],
       premiumExtra: ['Tournée de shooters pour toute la bande', 'Déguisement pour l’heureux élu', 'Manche finale en solo pour l’heureux élu'],
       faq: [
@@ -547,7 +554,7 @@ export const fr = {
       why: [
         { title: 'Court et efficace', text: 'Une heure suffit pour une session complète. On arrive à 18 h 30, on trinque à 19 h 45.' },
         { title: 'Pour toutes les équipes', text: 'Pas de niveau requis, pas de tenue spéciale. Le jeu met tout le monde à l’aise, y compris les nouveaux.' },
-        { title: 'Une adresse pratique', text: 'À 2 minutes de République, desservi par 5 lignes de métro. Vos collègues rentrent facilement.' },
+        { title: 'Une adresse pratique', text: 'À 3 minutes de République, desservi par 5 lignes de métro. Vos collègues rentrent facilement.' },
       ],
       premiumExtra: ['Mini-tournoi inter-équipes avec classement', 'Pistes réservées côte à côte pour toute l’équipe', 'Devis et facture entreprise'],
       premiumNote: 'Soirées d’entreprise, lancements et privatisations : écrivez-nous pour un devis.',
@@ -562,7 +569,7 @@ export const fr = {
       short: 'Une piste pour deux, un duel à départager et deux cocktails pour fêter la victoire ou consoler la défaite.',
       metaTitle: 'Sortie en duo à Paris : une piste de tir pour deux chez Shooters (République)',
       metaDescription:
-        'Une idée de sortie à deux à Paris : une piste de tir privée pour un duel d’une heure, cocktails signature et amuse-bouches. Dès 35 € par personne, à 2 minutes de République.',
+        'Une idée de sortie à deux à Paris : une piste de tir privée pour un duel d’une heure, cocktails signature et amuse-bouches. Dès 35 € par personne, à 3 minutes de République.',
       title: 'À deux, chacun sa réplique',
       lead: 'Un rendez-vous, un défi de couple ou une sortie entre deux amis : la piste est à vous pendant une heure, et le bar juste à côté pour débriefer.',
       why: [
@@ -582,7 +589,7 @@ export const fr = {
       short: 'Pas d’occasion particulière, juste l’envie de se voir ailleurs qu’accoudés à un comptoir. Une piste à vous, une réplique chacun, un score à défendre.',
       metaTitle: 'Sortie entre amis à Paris : bar stand de tir Shooters, République',
       metaDescription:
-        'Une sortie entre amis différente à Paris 10e : une piste de tir privée pour votre groupe, plus de 10 scénarios, scores en direct, cocktails et amuse-bouches dès 35 € par personne.',
+        'Une sortie entre amis différente à Paris 10e : une piste de tir privée pour votre groupe, plus de 20 scénarios, scores en direct, cocktails et amuse-bouches dès 35 € par personne.',
       title: 'Entre amis, la piste est à vous',
       lead: 'En soirée comme en week-end, une heure de jeu sur votre piste privée puis le bar pour prolonger. De 2 à 12 personnes, réservation en ligne.',
       why: [
