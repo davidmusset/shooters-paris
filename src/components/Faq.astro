@@ -1,0 +1,65 @@
+---
+import { t } from '../content/i18n';
+import { path, type Lang } from '../content/routes';
+
+interface Props {
+  lang: Lang;
+  items?: { q: string; a: string }[];
+  title?: string;
+  lead?: string;
+  /** Nombre de questions affichées (le reste renvoie vers la page FAQ). */
+  limit?: number;
+  theme?: 'cream' | 'dark';
+  showMore?: boolean;
+  /** Injecte le JSON-LD FAQPage (une seule fois par page). */
+  jsonLd?: boolean;
+}
+const { lang, items, title, lead, limit, theme = 'cream', showMore = false, jsonLd = true } = Astro.props;
+const d = t(lang);
+const all = items ?? d.faq.items;
+const shown = limit ? all.slice(0, limit) : all;
+
+const ld = {
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  mainEntity: shown.map((f) => ({
+    '@type': 'Question',
+    name: f.q,
+    acceptedAnswer: { '@type': 'Answer', text: f.a },
+  })),
+};
+---
+
+<section class:list={['section', theme === 'cream' ? 'theme-cream' : 'theme-dark']} id="faq">
+  <div class="container faq">
+    <div class="section-head section-head--center">
+      <h2>{title ?? d.faq.title}</h2>
+      {lead && <p class="lead">{lead}</p>}
+    </div>
+    <div class="faq__list">
+      {shown.map((f) => (
+        <details class="faq-item">
+          <summary>{f.q}</summary>
+          <div class="faq-answer"><p>{f.a}</p></div>
+        </details>
+      ))}
+    </div>
+    {showMore && (
+      <p class="faq__more">
+        <a class="btn btn--outline" href={path('faq', lang)}>{d.faq.more}</a>
+      </p>
+    )}
+  </div>
+  {jsonLd && <script type="application/ld+json" set:html={JSON.stringify(ld)} />}
+</section>
+
+<style>
+  .faq__list {
+    max-width: 52rem;
+    margin-inline: auto;
+  }
+  .faq__more {
+    text-align: center;
+    margin-top: 2rem;
+  }
+</style>

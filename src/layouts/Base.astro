@@ -1,0 +1,53 @@
+---
+import '@fontsource/stix-two-text/400.css';
+import '@fontsource/stix-two-text/400-italic.css';
+import '@fontsource/stix-two-text/700-italic.css';
+import '@fontsource-variable/source-sans-3/index.css';
+import '@fontsource/bodoni-moda/600.css';
+import '../styles/global.css';
+
+import Seo from '../components/Seo.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import { t } from '../content/i18n';
+import type { Lang, RouteKey } from '../content/routes';
+
+interface Props {
+  lang: Lang;
+  title: string;
+  description: string;
+  routeKey?: RouteKey;
+  alternates?: Partial<Record<Lang, string>>;
+  image?: string;
+  jsonLd?: Record<string, unknown>[];
+  noindex?: boolean;
+  /** Header transparent par-dessus un hero plein écran. */
+  heroHeader?: boolean;
+}
+
+const { lang, title, description, routeKey, alternates, image, jsonLd, noindex, heroHeader = false } = Astro.props;
+const dict = t(lang);
+---
+
+<!doctype html>
+<html lang={lang}>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#003732" />
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+    <link rel="icon" href="/favicon.ico" sizes="32x32" />
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+    <link rel="manifest" href="/site.webmanifest" />
+    <Seo {lang} {title} {description} {routeKey} {alternates} {image} {jsonLd} {noindex} />
+    <slot name="head" />
+  </head>
+  <body>
+    <a class="skip-link" href="#main">{dict.skip}</a>
+    <Header {lang} transparent={heroHeader} />
+    <main id="main">
+      <slot />
+    </main>
+    <Footer {lang} />
+  </body>
+</html>

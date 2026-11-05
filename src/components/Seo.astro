@@ -1,0 +1,112 @@
+---
+import { SITE_URL, BRAND, CONTACT, HOURS, OG_IMAGE, SOCIAL, FACTS } from '../content/site';
+import { ROUTES, type Lang, type RouteKey } from '../content/routes';
+import { LOCALE_TAG, OG_LOCALE } from '../content/i18n';
+
+interface Props {
+  lang: Lang;
+  title: string;
+  description: string;
+  routeKey?: RouteKey;
+  /** Chemins alternatifs explicites quand la page n'est pas dans ROUTES (ex. occasions dynamiques). */
+  alternates?: Partial<Record<Lang, string>>;
+  image?: string;
+  jsonLd?: Record<string, unknown>[];
+  noindex?: boolean;
+}
+
+const { lang, title, description, routeKey, alternates, image = OG_IMAGE, jsonLd = [], noindex = false } = Astro.props;
+
+const current = Astro.url.pathname.replace(/\/$/, '') || '/';
+const alt: Record<Lang, string> = routeKey
+  ? { fr: ROUTES[routeKey].fr, en: ROUTES[routeKey].en }
+  : { fr: alternates?.fr ?? current, en: alternates?.en ?? current };
+
+const abs = (p: string) => new URL(p, SITE_URL).toString();
+const canonical = abs(alt[lang]);
+
+const dayNames = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
+const openingHours = HOURS.filter((h) => h.open).map((h) => ({
+  '@type': 'OpeningHoursSpecification',
+  dayOfWeek: dayNames[h.day],
+  opens: h.open,
+  closes: h.close === '00:00' ? '23:59' : h.close,
+}));
+
+const business = {
+  '@context': 'https://schema.org',
+  '@type': ['BarOrPub', 'EntertainmentBusiness'],
+  '@id': `${SITE_URL}/#business`,
+  name: BRAND.name,
+  description: lang === 'fr'
+    ? "Bar stand de tir airsoft et cocktails à Paris 10e : 8 pistes privées, répliques réalistes, scénarios sur écran géant, dès 16 ans."
+    : 'Airsoft shooting range bar and cocktails in Paris 10e: 8 private lanes, realistic replicas, giant-screen scenarios, ages 16+.',
+  url: SITE_URL,
+  image: abs(image),
+  logo: abs('/brand/blason.png'),
+  email: CONTACT.email,
+  ...(CONTACT.phone ? { telephone: CONTACT.phone } : {}),
+  priceRange: `€${FACTS.priceFrom}-€${FACTS.pricePremium}`,
+  currenciesAccepted: 'EUR',
+  address: {
+    '@type': 'PostalAddress',
+    streetAddress: CONTACT.address.street,
+    postalCode: CONTACT.address.postalCode,
+    addressLocality: CONTACT.address.city,
+    addressCountry: CONTACT.address.country,
+  },
+  geo: { '@type': 'GeoCoordinates', latitude: CONTACT.address.lat, longitude: CONTACT.address.lng },
+  hasMap: CONTACT.mapsUrl,
+  openingHoursSpecification: openingHours,
+  sameAs: Object.values(SOCIAL).filter(Boolean),
+  areaServed: 'Paris',
+  makesOffer: [
+    {
+      '@type': 'Offer',
+      name: lang === 'fr' ? 'Pack Standard' : 'Standard pack',
+      price: String(FACTS.priceFrom),
+      priceCurrency: 'EUR',
+      url: abs(ROUTES.pricing[lang]),
+    },
+    {
+      '@type': 'Offer',
+      name: lang === 'fr' ? 'Pack Premium' : 'Premium pack',
+      price: String(FACTS.pricePremium),
+      priceCurrency: 'EUR',
+      url: abs(ROUTES.pricing[lang]),
+    },
+  ],
+};
+
+const allJsonLd = [business, ...jsonLd];
+---
+
+<title>{title}</title>
+<meta name="description" content={description} />
+<link rel="canonical" href={canonical} />
+<link rel="alternate" hreflang={LOCALE_TAG.fr} href={abs(alt.fr)} />
+<link rel="alternate" hreflang="en" href={abs(alt.en)} />
+<link rel="alternate" hreflang="x-default" href={abs(alt.fr)} />
+{noindex && <meta name="robots" content="noindex, nofollow" />}
+
+<meta property="og:type" content="website" />
+<meta property="og:site_name" content={BRAND.name} />
+<meta property="og:locale" content={OG_LOCALE[lang]} />
+<meta property="og:locale:alternate" content={lang === 'fr' ? OG_LOCALE.en : OG_LOCALE.fr} />
+<meta property="og:title" content={title} />
+<meta property="og:description" content={description} />
+<meta property="og:url" content={canonical} />
+<meta property="og:image" content={abs(image)} />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content={title} />
+<meta name="twitter:description" content={description} />
+<meta name="twitter:image" content={abs(image)} />
+
+<meta name="geo.region" content="FR-75" />
+<meta name="geo.placename" content="Paris" />
+<meta name="geo.position" content={`${CONTACT.address.lat};${CONTACT.address.lng}`} />
+<meta name="ICBM" content={`${CONTACT.address.lat}, ${CONTACT.address.lng}`} />
+
+{allJsonLd.map((obj) => <script type="application/ld+json" set:html={JSON.stringify(obj)} />)}

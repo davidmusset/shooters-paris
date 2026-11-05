@@ -1,0 +1,416 @@
+---
+import { Image, Picture } from 'astro:assets';
+import Base from '../layouts/Base.astro';
+import Illus from '../components/Illus.astro';
+import Packs from '../components/Packs.astro';
+import Occasions from '../components/Occasions.astro';
+import Faq from '../components/Faq.astro';
+import Venue from '../components/Venue.astro';
+import CtaBand from '../components/CtaBand.astro';
+import { t } from '../content/i18n';
+import { path, type Lang } from '../content/routes';
+import { BOOKING, MENU_PDF } from '../content/site';
+import { photo, alt } from '../content/photos';
+
+interface Props {
+  lang: Lang;
+}
+const { lang } = Astro.props;
+const d = t(lang);
+const bookHref = BOOKING.externalUrl || path('book', lang);
+
+const hero = photo('hero-lane-woman');
+const stepIcons = ['serrure', 'guns', 'verre-plume'];
+const gamePhotos = ['game-targets', 'game-duck', 'game-bottles'];
+---
+
+<Base lang={lang} title={d.meta.home.title} description={d.meta.home.description} routeKey="home" heroHeader>
+  <!-- HERO -->
+  <section class="hero">
+    <Picture
+      src={hero}
+      alt={alt('hero-lane-woman', lang)}
+      widths={[640, 1024, 1600, 2000]}
+      sizes="100vw"
+      formats={['avif', 'webp']}
+      loading="eager"
+      fetchpriority="high"
+      class="hero__img"
+    />
+    <div class="hero__shade" aria-hidden="true"></div>
+    <div class="container hero__content">
+      <p class="hero__opening rise">{d.hero.opening}</p>
+      <h1 class="rise rise--2">{d.hero.title}</h1>
+      <p class="lead rise rise--2">{d.hero.lead}</p>
+      <div class="hero__actions rise rise--3">
+        <a class="btn btn--peach" href={bookHref}>{d.hero.ctaBook}</a>
+        <a class="btn btn--outline" href="#how">{d.hero.ctaHow}</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- FACTS -->
+  <section class="facts theme-cream" aria-label="Chiffres clés">
+    <div class="container facts__grid">
+      {d.facts.map((f) => (
+        <div class="fact">
+          <strong>{f.value}</strong>
+          <span>{f.label}</span>
+        </div>
+      ))}
+    </div>
+  </section>
+
+  <!-- HOW -->
+  <section class="section theme-dark how" id="how">
+    <div class="container">
+      <div class="section-head section-head--center">
+        <h2>{d.steps.title}</h2>
+      </div>
+      <ol class="steps">
+        {d.steps.items.map((s, i) => (
+          <li class="step">
+            <div class="step__arch">
+              <Illus name={stepIcons[i]} class="step__icon" recolor />
+            </div>
+            <span class="step__num" aria-hidden="true">{i + 1}</span>
+            <h3>{s.title}</h3>
+            <p>{s.text}</p>
+          </li>
+        ))}
+      </ol>
+    </div>
+  </section>
+
+  <!-- CONCEPT -->
+  <section class="section theme-cream split">
+    <div class="container split__grid">
+      <div class="arch arch--frame split__media">
+        <Image src={photo('player-lane-109')} alt={alt('player-lane-109', lang)} widths={[480, 760, 1000]} sizes="(max-width: 900px) 90vw, 46vw" />
+      </div>
+      <div class="split__text">
+        <h2>{d.concept.title}</h2>
+        {d.concept.text.map((p) => <p>{p}</p>)}
+        <p><a class="btn btn--green" href={path('concept', lang)}>{d.concept.cta}</a></p>
+      </div>
+    </div>
+  </section>
+
+  <!-- GAMES -->
+  <section class="section theme-deep games">
+    <div class="ornament games__ornament"><Illus name="target" /></div>
+    <div class="container">
+      <div class="section-head">
+        <h2>{d.games.title}</h2>
+        <p class="lead">{d.games.lead}</p>
+      </div>
+      <div class="grid grid--3">
+        {d.games.items.map((g, i) => (
+          <article class="game">
+            <div class="game__media">
+              <Image src={photo(gamePhotos[i])} alt={alt(gamePhotos[i], lang)} width="720" height="720" />
+            </div>
+            <h3 class="caps game__name">{g.name}</h3>
+            <p>{g.text}</p>
+          </article>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- BAR -->
+  <section class="section theme-dark split split--reverse">
+    <div class="container split__grid">
+      <div class="arch arch--frame split__media">
+        <Image src={photo('gc-tray-decanter')} alt={alt('gc-tray-decanter', lang)} widths={[480, 760, 1000]} sizes="(max-width: 900px) 90vw, 46vw" />
+      </div>
+      <div class="split__text">
+        <h2>{d.bar.title}</h2>
+        {d.bar.text.map((p) => <p>{p}</p>)}
+        <p><a class="btn btn--peach" href={path('menu', lang)}>{d.bar.cta}</a></p>
+      </div>
+    </div>
+  </section>
+
+  <Occasions lang={lang} />
+
+  <Packs lang={lang} theme="dark" />
+
+  <!-- SAFETY -->
+  <section class="section theme-cream safety">
+    <div class="container">
+      <div class="section-head section-head--center">
+        <h2>{d.safety.title}</h2>
+      </div>
+      <div class="grid grid--3">
+        {d.safety.items.map((s, i) => (
+          <article class="safety__item">
+            <Illus name={['gun-2', 'target', 'lock-feathers'][i]} class="safety__icon" recolor />
+            <h3>{s.title}</h3>
+            <p>{s.text}</p>
+          </article>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <Faq lang={lang} limit={6} showMore theme="dark" />
+
+  <Venue lang={lang} />
+
+  <CtaBand lang={lang} />
+</Base>
+
+<style>
+  /* ----- hero ----- */
+  .hero {
+    position: relative;
+    min-height: min(92svh, 900px);
+    display: grid;
+    align-items: end;
+    overflow: hidden;
+    background: var(--green-950);
+  }
+  .hero :global(.hero__img),
+  .hero :global(picture) {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+  }
+  .hero :global(img) {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: 60% 40%;
+  }
+  .hero__shade {
+    position: absolute;
+    inset: 0;
+    background:
+      linear-gradient(to top, rgba(1, 37, 34, 0.95) 0%, rgba(1, 37, 34, 0.55) 45%, rgba(1, 37, 34, 0.15) 100%),
+      linear-gradient(to right, rgba(1, 37, 34, 0.55), rgba(1, 37, 34, 0) 60%);
+  }
+  .hero__content {
+    position: relative;
+    z-index: 1;
+    padding-block: clamp(7rem, 12vw, 9rem) clamp(3rem, 6vw, 5rem);
+    max-width: var(--container);
+  }
+  .hero__content h1 {
+    max-width: 12ch;
+    margin-bottom: 1.25rem;
+  }
+  .hero__opening {
+    font-family: var(--font-caps);
+    font-size: 0.78rem;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--mint);
+    margin-bottom: 1.25rem;
+  }
+  .hero__actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+    margin-top: 2rem;
+  }
+
+  /* ----- facts ----- */
+  .facts {
+    border-top: 4px solid var(--peach);
+  }
+  .facts__grid {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 1rem;
+    padding-block: 1.5rem;
+  }
+  .fact {
+    display: grid;
+    gap: 0.15rem;
+    padding: 0.5rem 1rem;
+    border-left: 1px solid rgba(0, 55, 50, 0.18);
+  }
+  .fact:first-child {
+    border-left: 0;
+  }
+  .fact strong {
+    font-family: var(--font-display);
+    font-style: italic;
+    font-weight: 700;
+    font-size: clamp(1.6rem, 2.6vw, 2.2rem);
+    line-height: 1;
+    color: var(--green);
+  }
+  .fact span {
+    font-size: 0.95rem;
+    opacity: 0.8;
+  }
+  @media (max-width: 760px) {
+    .facts__grid {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+    .fact:nth-child(3) {
+      border-left: 0;
+    }
+  }
+
+  /* ----- steps ----- */
+  .steps {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: clamp(1.5rem, 3vw, 3rem);
+    counter-reset: step;
+  }
+  .step {
+    position: relative;
+    display: grid;
+    gap: 0.75rem;
+    justify-items: start;
+  }
+  .step__arch {
+    width: 100%;
+    aspect-ratio: 4 / 3;
+    border-radius: var(--radius-arch);
+    border: 1.5px solid var(--mint);
+    display: grid;
+    place-items: center;
+    color: var(--mint);
+    background: radial-gradient(120% 90% at 50% 100%, rgba(147, 210, 183, 0.14), transparent 70%);
+    margin-bottom: 0.5rem;
+  }
+  .step :global(.step__icon) {
+    width: 42%;
+    max-height: 60%;
+  }
+  .step__num {
+    position: absolute;
+    top: 0.75rem;
+    left: 0.75rem;
+    width: 2.4rem;
+    height: 2.4rem;
+    border-radius: 50%;
+    background: var(--peach);
+    color: var(--green-950);
+    display: grid;
+    place-items: center;
+    font-family: var(--font-display);
+    font-style: italic;
+    font-weight: 700;
+    font-size: 1.2rem;
+  }
+  .step p {
+    opacity: 0.88;
+  }
+  @media (max-width: 760px) {
+    .steps {
+      grid-template-columns: 1fr;
+      max-width: 30rem;
+      margin-inline: auto;
+    }
+    .step__arch {
+      aspect-ratio: 16 / 9;
+    }
+  }
+
+  /* ----- split sections ----- */
+  .split__grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: clamp(2rem, 5vw, 5rem);
+    align-items: center;
+  }
+  .split--reverse .split__media {
+    order: 2;
+  }
+  .split__media {
+    aspect-ratio: 4 / 5;
+    max-width: 520px;
+    width: 100%;
+    justify-self: center;
+  }
+  .split__text {
+    display: grid;
+    gap: 1.25rem;
+    justify-items: start;
+    max-width: 34rem;
+  }
+  .split__text p {
+    opacity: 0.9;
+  }
+  @media (max-width: 900px) {
+    .split__grid {
+      grid-template-columns: 1fr;
+    }
+    .split--reverse .split__media {
+      order: 0;
+    }
+    .split__media {
+      max-width: 420px;
+      aspect-ratio: 4 / 4.6;
+    }
+  }
+
+  /* ----- games ----- */
+  .games {
+    overflow: hidden;
+  }
+  .games__ornament {
+    width: 360px;
+    right: -90px;
+    top: -60px;
+    opacity: 0.12;
+  }
+  .game {
+    display: grid;
+    gap: 0.75rem;
+    position: relative;
+    z-index: 1;
+  }
+  .game__media {
+    border-radius: var(--radius-arch);
+    overflow: hidden;
+    aspect-ratio: 1;
+    border: 1.5px solid rgba(147, 210, 183, 0.5);
+    padding: 0.4rem;
+  }
+  .game__media img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: inherit;
+  }
+  .game__name {
+    font-size: 1.15rem;
+    color: var(--mint);
+    margin-top: 0.5rem;
+  }
+  .game p {
+    opacity: 0.88;
+  }
+
+  /* ----- safety ----- */
+  .safety__item {
+    display: grid;
+    gap: 0.75rem;
+    justify-items: start;
+    background: var(--white);
+    border-radius: var(--radius);
+    padding: 2rem;
+    color: var(--green);
+  }
+  .safety :global(.safety__icon) {
+    height: 72px;
+    width: auto;
+    max-width: 140px;
+    margin-bottom: 0.5rem;
+  }
+  .safety__item p {
+    color: var(--ink);
+    opacity: 0.88;
+  }
+</style>

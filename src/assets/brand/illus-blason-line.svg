@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="Calque_2" data-name="Calque 2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 952.35 712.2">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: none;
+        stroke: #f39d27;
+        stroke-miterlimit: 10;
+        stroke-width: 2px;
+      }
+
+      .cls-2 {
+        fill: #003732;
+        font-family: STIXTwoTextItalic-SemiBoldItalic, 'STIX Two Text';
+        font-size: 25px;
+        font-style: italic;
+        font-variation-settings: 'wght' 600;
+        font-weight: 600;
+      }
+
+      .cls-3 {
+        letter-spacing: -.06em;
+      }
+
+      .cls-4 {
+        letter-spacing: -.03em;
+      }
+
+      .cls-5 {
+        letter-spacing: -.04em;
+      }
+    </style>
+  </defs>
+  <g id="Calque_1-2" data-name="Calque 1">
+    <text class="cls-2" transform="translate(21.32 358.53)"><tspan x="0" y="0">IN</tspan><tspan class="cls-4" x="27.9" y="0">S</tspan><tspan class="cls-3" x="41.07" y="0">T</tspan><tspan class="cls-5" x="55.7" y="0">A</tspan><tspan x="72.17" y="0">GRAM</tspan></text>
+    <path class="cls-1" d="M698.62,711.2c-4.11,0-8.23-1.24-11.82-3.72-19.54-13.5-70.42-46.97-120.6-66.15-.3-.12-29.67-11.8-58.97-37.69-27.08-23.92-59.66-65.21-61.13-126.08V73.26c0-8.39,4.89-15.98,12.46-19.34C569.93,4.52,697.54,1.03,698.82,1c1.32.03,128.71,3.52,240.06,52.93,7.57,3.36,12.46,10.95,12.46,19.34v404.28c-1.47,60.89-34.05,102.18-61.13,126.11-29.3,25.89-58.67,37.57-58.96,37.68h0c-50.2,19.19-101.23,52.67-120.84,66.17-3.58,2.47-7.69,3.7-11.79,3.7Z"/>
+  </g>
+</svg>

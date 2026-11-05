@@ -1,0 +1,162 @@
+---
+import { t } from '../content/i18n';
+import { path, type Lang } from '../content/routes';
+import { BOOKING } from '../content/site';
+import type { PackContent } from '../content/fr';
+
+interface Props {
+  lang: Lang;
+  /** Lignes supplémentaires affichées dans la carte Premium (pages occasions). */
+  premiumExtra?: string[];
+  premiumNote?: string;
+  standardExtra?: string[];
+  title?: string;
+  lead?: string;
+  theme?: 'cream' | 'dark';
+}
+const { lang, premiumExtra = [], standardExtra = [], premiumNote, title, lead, theme = 'cream' } = Astro.props;
+const d = t(lang);
+const bookHref = BOOKING.externalUrl || path('book', lang);
+const quoteHref = path('contact', lang);
+
+const packs: { key: string; pack: PackContent; extra: string[]; href: string; featured: boolean }[] = [
+  { key: 'standard', pack: d.packs.standard, extra: standardExtra, href: bookHref, featured: false },
+  { key: 'premium', pack: d.packs.premium, extra: premiumExtra, href: bookHref, featured: true },
+  { key: 'custom', pack: d.packs.custom, extra: [], href: quoteHref, featured: false },
+];
+---
+
+<section class:list={['section', theme === 'cream' ? 'theme-cream' : 'theme-dark']} id="packs">
+  <div class="container">
+    <div class="section-head section-head--center">
+      <h2>{title ?? d.packs.title}</h2>
+      <p class="lead">{lead ?? d.packs.lead}</p>
+    </div>
+
+    <div class="packs">
+      {packs.map(({ key, pack, extra, href, featured }) => (
+        <article class:list={['pack', { 'pack--featured': featured }]} data-pack={key}>
+          <header class="pack__head">
+            <h3 class="pack__name">{pack.name}</h3>
+            <p class="pack__price">
+              <span class="pack__amount">{pack.price}</span>
+              {pack.per && <span class="pack__per">{pack.per}</span>}
+            </p>
+            <p class="pack__intro">{pack.intro}</p>
+          </header>
+          <ul class="check-list pack__list">
+            {pack.items.map((i) => <li>{i}</li>)}
+            {extra.map((i) => <li class="pack__extra">{i}</li>)}
+          </ul>
+          <footer class="pack__foot">
+            <p class="pack__from">{pack.from}</p>
+            <a class:list={['btn', featured ? 'btn--peach' : 'btn--green']} href={href}>{pack.cta}</a>
+          </footer>
+        </article>
+      ))}
+    </div>
+    {premiumNote && <p class="packs__note">{premiumNote}</p>}
+    <p class="packs__footnote">{d.packs.footnote}</p>
+  </div>
+</section>
+
+<style>
+  .packs {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: clamp(1rem, 2vw, 1.75rem);
+    align-items: stretch;
+  }
+  .pack {
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
+    background: var(--white);
+    color: var(--ink);
+    border-radius: var(--radius);
+    padding: clamp(1.5rem, 3vw, 2.25rem);
+    border: 1px solid rgba(0, 55, 50, 0.1);
+  }
+  .theme-dark .pack {
+    background: var(--green-700);
+    color: var(--white);
+    border-color: rgba(255, 255, 255, 0.08);
+  }
+  .pack--featured {
+    background: var(--green);
+    color: var(--white);
+    box-shadow: var(--shadow);
+    position: relative;
+  }
+  .theme-dark .pack--featured {
+    background: var(--green-950);
+    outline: 2px solid var(--peach);
+  }
+  .pack__name {
+    font-size: 1.6rem;
+  }
+  .pack__price {
+    margin-top: 0.75rem;
+    display: flex;
+    align-items: baseline;
+    gap: 0.5rem;
+    flex-wrap: wrap;
+  }
+  .pack__amount {
+    font-family: var(--font-display);
+    font-weight: 700;
+    font-style: italic;
+    font-size: clamp(2.4rem, 4vw, 3.2rem);
+    line-height: 1;
+    color: var(--peach);
+  }
+  .pack--featured .pack__amount {
+    color: var(--gold);
+  }
+  .pack__per {
+    opacity: 0.8;
+  }
+  .pack__intro {
+    margin-top: 0.5rem;
+    opacity: 0.85;
+  }
+  .pack__list {
+    flex: 1;
+  }
+  .pack__extra {
+    font-weight: 600;
+  }
+  .pack--featured .pack__extra::before {
+    background: var(--gold);
+    box-shadow: 0 0 0 3px rgba(243, 157, 39, 0.25);
+  }
+  .pack__foot {
+    display: grid;
+    gap: 0.75rem;
+  }
+  .pack__from {
+    font-weight: 600;
+    opacity: 0.85;
+  }
+  .packs__note {
+    margin-top: 1.5rem;
+    text-align: center;
+    font-weight: 600;
+  }
+  .packs__footnote {
+    margin-top: 1rem;
+    text-align: center;
+    font-size: 0.9rem;
+    opacity: 0.7;
+  }
+  @media (max-width: 960px) {
+    .packs {
+      grid-template-columns: 1fr;
+      max-width: 34rem;
+      margin-inline: auto;
+    }
+    .pack--featured {
+      order: -1;
+    }
+  }
+</style>

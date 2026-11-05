@@ -1,0 +1,455 @@
+/* ------------------------------------------------------------------
+   Shooters Paris — design system
+   Charte : Petrol green #003732 · Jolly peach #FF7784 · Mint #93D2B7
+            Sunny gold #F39D27 · Light grey #EFE9DD · White
+   Typo   : STIX Two Text (titres, italique gras) · Source Sans 3 (texte)
+            Bodoni Moda (mots spéciaux en capitales)
+------------------------------------------------------------------- */
+
+:root {
+  --green-950: #012522;
+  --green-900: #013532;
+  --green: #003732;
+  --green-700: #0b4a44;
+  --green-600: #175c55;
+  --mint: #93d2b7;
+  --mint-200: #c9e8da;
+  --peach: #ff7784;
+  --peach-600: #e85f6d;
+  --peach-100: #ffe3e6;
+  --gold: #f39d27;
+  --cream: #efe9dd;
+  --cream-100: #f7f3ea;
+  --cream-300: #e3dccb;
+  --ink: #0e1f1d;
+  --ink-soft: #3b4f4c;
+  --white: #ffffff;
+
+  --font-display: 'STIX Two Text', 'Times New Roman', Georgia, serif;
+  --font-body: 'Source Sans 3 Variable', 'Source Sans 3', 'Segoe UI', Arial, sans-serif;
+  --font-caps: 'Bodoni Moda', 'Didot', 'Times New Roman', serif;
+
+  --container: 1200px;
+  --gutter: clamp(1rem, 4vw, 2rem);
+  --section: clamp(4rem, 9vw, 7rem);
+  --radius-arch: 999px 999px 1.25rem 1.25rem;
+  --radius: 1.25rem;
+  --radius-sm: 0.75rem;
+  --shadow: 0 18px 50px -24px rgba(1, 37, 34, 0.55);
+  --ease: cubic-bezier(0.2, 0.7, 0.2, 1);
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  -webkit-text-size-adjust: 100%;
+  scroll-behavior: smooth;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    transition-duration: 0.001ms !important;
+  }
+}
+
+body {
+  margin: 0;
+  background: var(--green);
+  color: var(--white);
+  font-family: var(--font-body);
+  font-size: 1.125rem;
+  line-height: 1.6;
+  font-weight: 400;
+  -webkit-font-smoothing: antialiased;
+}
+
+img,
+svg,
+video {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+a {
+  color: inherit;
+}
+
+button {
+  font: inherit;
+}
+
+h1,
+h2,
+h3,
+h4 {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-style: italic;
+  line-height: 1.08;
+  letter-spacing: -0.005em;
+  margin: 0;
+  text-wrap: balance;
+}
+
+h1 {
+  font-size: clamp(2.5rem, 6.2vw, 4.75rem);
+}
+h2 {
+  font-size: clamp(2rem, 4.2vw, 3.25rem);
+}
+h3 {
+  font-size: clamp(1.35rem, 2.2vw, 1.75rem);
+}
+h4 {
+  font-size: 1.2rem;
+}
+
+p {
+  margin: 0;
+}
+p + p {
+  margin-top: 1em;
+}
+
+.caps {
+  font-family: var(--font-caps);
+  font-weight: 600;
+  font-style: normal;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.lead {
+  font-size: clamp(1.15rem, 1.6vw, 1.35rem);
+  line-height: 1.5;
+  max-width: 38em;
+}
+
+.muted {
+  opacity: 0.8;
+}
+
+/* ---------- layout ---------- */
+.container {
+  width: min(var(--container), 100% - 2 * var(--gutter));
+  margin-inline: auto;
+}
+
+.section {
+  padding-block: var(--section);
+  position: relative;
+}
+
+.section--tight {
+  padding-block: calc(var(--section) * 0.6);
+}
+
+.theme-dark {
+  background: var(--green);
+  color: var(--white);
+}
+.theme-deep {
+  background: var(--green-900);
+  color: var(--white);
+}
+.theme-cream {
+  background: var(--cream);
+  color: var(--ink);
+}
+.theme-mint {
+  background: var(--mint);
+  color: var(--green-900);
+}
+
+.section-head {
+  max-width: 44rem;
+  margin-bottom: clamp(2rem, 4vw, 3.5rem);
+}
+.section-head .lead {
+  margin-top: 1rem;
+}
+.section-head--center {
+  margin-inline: auto;
+  text-align: center;
+}
+.section-head--center .lead {
+  margin-inline: auto;
+}
+
+.grid {
+  display: grid;
+  gap: clamp(1.25rem, 2.5vw, 2rem);
+}
+.grid--2 {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+.grid--3 {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+.grid--4 {
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+}
+@media (max-width: 900px) {
+  .grid--3,
+  .grid--4 {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+@media (max-width: 600px) {
+  .grid--2,
+  .grid--3,
+  .grid--4 {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}
+
+/* ---------- buttons ---------- */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  min-height: 3.25rem;
+  padding: 0.75rem 1.75rem;
+  border-radius: 999px;
+  border: 2px solid transparent;
+  font-weight: 600;
+  font-size: 1.05rem;
+  letter-spacing: 0.01em;
+  text-decoration: none;
+  cursor: pointer;
+  transition:
+    background-color 0.2s var(--ease),
+    color 0.2s var(--ease),
+    border-color 0.2s var(--ease),
+    transform 0.2s var(--ease);
+}
+.btn:focus-visible {
+  outline: 3px solid var(--gold);
+  outline-offset: 3px;
+}
+.btn--peach {
+  background: var(--peach);
+  color: var(--green-950);
+}
+.btn--peach:hover {
+  background: var(--peach-600);
+  color: var(--white);
+}
+.btn--outline {
+  border-color: currentColor;
+  background: transparent;
+  color: inherit;
+}
+.btn--outline:hover {
+  background: rgba(255, 255, 255, 0.12);
+}
+.theme-cream .btn--outline:hover {
+  background: rgba(0, 55, 50, 0.08);
+}
+.btn--green {
+  background: var(--green);
+  color: var(--white);
+}
+.btn--green:hover {
+  background: var(--green-700);
+}
+.btn--small {
+  min-height: 2.5rem;
+  padding: 0.4rem 1.1rem;
+  font-size: 0.95rem;
+}
+
+/* ---------- arch image (signature) ---------- */
+.arch {
+  border-radius: var(--radius-arch);
+  overflow: hidden;
+  position: relative;
+  isolation: isolate;
+}
+.arch img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.arch--frame {
+  padding: 0.5rem;
+  background: transparent;
+  border: 1.5px solid var(--mint);
+}
+.arch--frame > img,
+.arch--frame > picture,
+.arch--frame > picture img {
+  border-radius: inherit;
+}
+
+/* ---------- cards ---------- */
+.card {
+  background: var(--white);
+  color: var(--ink);
+  border-radius: var(--radius);
+  padding: clamp(1.5rem, 3vw, 2.25rem);
+}
+.theme-dark .card,
+.theme-deep .card {
+  background: var(--green-700);
+  color: var(--white);
+}
+
+.badge {
+  display: inline-block;
+  padding: 0.25rem 0.75rem;
+  border-radius: 999px;
+  background: var(--peach-100);
+  color: var(--green-900);
+  font-size: 0.85rem;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+}
+.theme-dark .badge,
+.theme-deep .badge {
+  background: rgba(147, 210, 183, 0.18);
+  color: var(--mint);
+}
+
+/* ---------- lists ---------- */
+.check-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: grid;
+  gap: 0.55rem;
+}
+.check-list li {
+  position: relative;
+  padding-left: 1.75rem;
+}
+.check-list li::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0.55em;
+  width: 0.6rem;
+  height: 0.6rem;
+  border-radius: 50%;
+  background: var(--peach);
+  box-shadow: 0 0 0 3px rgba(255, 119, 132, 0.22);
+}
+
+/* ---------- misc ---------- */
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  border: 0;
+}
+
+.skip-link {
+  position: absolute;
+  left: 1rem;
+  top: -4rem;
+  background: var(--gold);
+  color: var(--green-950);
+  padding: 0.6rem 1rem;
+  border-radius: 0.5rem;
+  z-index: 100;
+  font-weight: 600;
+}
+.skip-link:focus {
+  top: 1rem;
+}
+
+.ornament {
+  position: absolute;
+  pointer-events: none;
+  opacity: 0.55;
+  z-index: 0;
+}
+.ornament svg {
+  width: 100%;
+  height: auto;
+}
+
+details.faq-item {
+  border-top: 1px solid rgba(0, 55, 50, 0.18);
+}
+.theme-dark details.faq-item,
+.theme-deep details.faq-item {
+  border-color: rgba(255, 255, 255, 0.18);
+}
+details.faq-item:last-child {
+  border-bottom: 1px solid rgba(0, 55, 50, 0.18);
+}
+.theme-dark details.faq-item:last-child,
+.theme-deep details.faq-item:last-child {
+  border-color: rgba(255, 255, 255, 0.18);
+}
+details.faq-item summary {
+  cursor: pointer;
+  list-style: none;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+  padding: 1.1rem 0;
+  font-weight: 600;
+  font-size: 1.1rem;
+}
+details.faq-item summary::-webkit-details-marker {
+  display: none;
+}
+details.faq-item summary::after {
+  content: '+';
+  font-family: var(--font-display);
+  font-size: 1.6rem;
+  line-height: 1;
+  color: var(--peach);
+  transition: transform 0.25s var(--ease);
+  flex: none;
+}
+details.faq-item[open] summary::after {
+  transform: rotate(45deg);
+}
+details.faq-item .faq-answer {
+  padding: 0 0 1.25rem;
+  max-width: 48rem;
+}
+details.faq-item .faq-answer p {
+  opacity: 0.92;
+}
+
+/* hero entrance (single orchestrated moment) */
+@keyframes rise {
+  from {
+    opacity: 0;
+    transform: translateY(14px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+.rise {
+  animation: rise 0.8s var(--ease) both;
+}
+.rise--2 {
+  animation-delay: 0.12s;
+}
+.rise--3 {
+  animation-delay: 0.24s;
+}

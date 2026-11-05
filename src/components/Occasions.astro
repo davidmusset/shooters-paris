@@ -1,0 +1,137 @@
+---
+import { Image } from 'astro:assets';
+import { t } from '../content/i18n';
+import { path, OCCASION_KEYS, type Lang, type OccasionKey } from '../content/routes';
+import { photo, alt, OCCASION_PHOTO } from '../content/photos';
+
+interface Props {
+  lang: Lang;
+  /** Occasion à exclure (page courante). */
+  exclude?: OccasionKey;
+  title?: string;
+  lead?: string;
+  compact?: boolean;
+  showNote?: boolean;
+}
+const { lang, exclude, title, lead, compact = false, showNote = true } = Astro.props;
+const d = t(lang);
+
+const items = OCCASION_KEYS.filter((k) => k !== exclude);
+---
+
+<section class="section theme-cream" id="occasions">
+  <div class="container">
+    <div class="section-head">
+      <h2>{title ?? d.occasions.title}</h2>
+      {!compact && <p class="lead">{lead ?? d.occasions.lead}</p>}
+    </div>
+
+    <div class="occasions">
+      {items.map((key) => {
+        const o = d.occasionPages[key];
+        return (
+          <a class="occasion" href={path(key, lang)}>
+            <div class="occasion__media">
+              <Image src={photo(OCCASION_PHOTO[key])} alt={alt(OCCASION_PHOTO[key], lang)} width="640" height="480" />
+            </div>
+            <div class="occasion__body">
+              <h3>{o.name}</h3>
+              <span class="badge">{o.badge}</span>
+              {!compact && <p>{o.short}</p>}
+              <span class="occasion__more">{d.occasions.more}</span>
+            </div>
+          </a>
+        );
+      })}
+    </div>
+
+    {showNote && (
+      <aside class="occasions__note">
+        <h3>{d.occasions.note.title}</h3>
+        <p>{d.occasions.note.text}</p>
+      </aside>
+    )}
+  </div>
+</section>
+
+<style>
+  .occasions {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: clamp(1rem, 2vw, 1.75rem);
+  }
+  .occasion {
+    display: flex;
+    flex-direction: column;
+    background: var(--white);
+    border-radius: var(--radius);
+    overflow: hidden;
+    text-decoration: none;
+    color: var(--ink);
+    border: 1px solid rgba(0, 55, 50, 0.1);
+    transition: transform 0.25s var(--ease), box-shadow 0.25s var(--ease);
+  }
+  .occasion:hover {
+    transform: translateY(-3px);
+    box-shadow: var(--shadow);
+  }
+  .occasion:focus-visible {
+    outline: 3px solid var(--gold);
+    outline-offset: 3px;
+  }
+  .occasion__media {
+    aspect-ratio: 4 / 3;
+    overflow: hidden;
+  }
+  .occasion__media img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.6s var(--ease);
+  }
+  .occasion:hover .occasion__media img {
+    transform: scale(1.04);
+  }
+  .occasion__body {
+    padding: 1.5rem;
+    display: grid;
+    gap: 0.75rem;
+    align-content: start;
+  }
+  .occasion__body h3 {
+    font-size: 1.55rem;
+  }
+  .occasion__body p {
+    opacity: 0.85;
+  }
+  .occasion__more {
+    font-weight: 600;
+    color: var(--green);
+    text-decoration: underline;
+    text-decoration-color: var(--peach);
+    text-underline-offset: 0.2em;
+    margin-top: 0.25rem;
+  }
+  .occasions__note {
+    margin-top: clamp(1.5rem, 3vw, 2.5rem);
+    background: var(--peach-100);
+    border: 1px solid rgba(255, 119, 132, 0.5);
+    border-radius: var(--radius);
+    padding: 1.5rem 2rem;
+    display: grid;
+    gap: 0.35rem;
+  }
+  .occasions__note h3 {
+    font-size: 1.35rem;
+  }
+  @media (max-width: 900px) {
+    .occasions {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+  }
+  @media (max-width: 560px) {
+    .occasions {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>
