@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://shooters-paris.vercel.app/sitemap-index.xml
+Sitemap: https://shooters-paris.fr/sitemap-index.xml

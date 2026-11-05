@@ -5,7 +5,7 @@
 // ---------------------------------------------------------------------------
 
 /** URL publique du site (à remplacer par le domaine définitif avant la mise en ligne). */
-export const SITE_URL = 'https://shooters-paris.vercel.app';
+export const SITE_URL = 'https://shooters-paris.fr';
 
 export const BRAND = {
   name: 'Shooters Paris',

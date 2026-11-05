@@ -11,12 +11,12 @@
 - Mardi à samedi : 15 h à minuit. Dimanche : 15 h à 22 h. Fermé le lundi.
 
 ## Pages
-- [Accueil](https://shooters-paris.vercel.app/) : présentation, fonctionnement, packs, FAQ, accès.
-- [Le concept](https://shooters-paris.vercel.app/concept) : airsoft, pistes, scénarios, sécurité.
-- [Occasions](https://shooters-paris.vercel.app/occasions) : team building, anniversaire, EVG/EVJF, afterwork, duo, entre amis.
-- [Tarifs](https://shooters-paris.vercel.app/tarifs)
-- [Menu](https://shooters-paris.vercel.app/menu)
-- [Venir](https://shooters-paris.vercel.app/lieu)
-- [FAQ](https://shooters-paris.vercel.app/faq)
-- [Contact et devis](https://shooters-paris.vercel.app/contact)
-- [English version](https://shooters-paris.vercel.app/en)
+- [Accueil](https://shooters-paris.fr/) : présentation, fonctionnement, packs, FAQ, accès.
+- [Le concept](https://shooters-paris.fr/concept) : airsoft, pistes, scénarios, sécurité.
+- [Occasions](https://shooters-paris.fr/occasions) : team building, anniversaire, EVG/EVJF, afterwork, duo, entre amis.
+- [Tarifs](https://shooters-paris.fr/tarifs)
+- [Menu](https://shooters-paris.fr/menu)
+- [Venir](https://shooters-paris.fr/lieu)
+- [FAQ](https://shooters-paris.fr/faq)
+- [Contact et devis](https://shooters-paris.fr/contact)
+- [English version](https://shooters-paris.fr/en)
