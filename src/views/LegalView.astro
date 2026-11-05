@@ -1,0 +1,44 @@
+---
+import Base from '../layouts/Base.astro';
+import PageHero from '../components/PageHero.astro';
+import { t } from '../content/i18n';
+import type { Lang, RouteKey } from '../content/routes';
+
+interface Props {
+  lang: Lang;
+  kind: 'legal' | 'privacy' | 'terms';
+}
+const { lang, kind } = Astro.props;
+const d = t(lang);
+const page = { legal: d.legalPage, privacy: d.privacyPage, terms: d.termsPage }[kind];
+const meta = d.meta[kind];
+---
+
+<Base lang={lang} title={`${meta.title} | Shooters Paris`} description={meta.description} routeKey={kind as RouteKey}>
+  <PageHero title={page.title} compact />
+  <section class="section theme-cream">
+    <div class="container legal">
+      {page.sections.map((s) => (
+        <section class="legal__section">
+          <h2>{s.title}</h2>
+          {s.text.map((p) => <p>{p}</p>)}
+        </section>
+      ))}
+    </div>
+  </section>
+</Base>
+
+<style>
+  .legal {
+    max-width: 48rem;
+    display: grid;
+    gap: 2rem;
+  }
+  .legal__section {
+    display: grid;
+    gap: 0.75rem;
+  }
+  .legal__section h2 {
+    font-size: 1.6rem;
+  }
+</style>

@@ -447,7 +447,7 @@ export const en: Dict = {
         { title: 'A real bar moment', text: 'Prizes are handed out at the counter, trophy in hand, over cocktails and boards. That is where conversations carry on.' },
         { title: 'Easy to organise', text: 'One contact, a quote within one business day, one invoice. 2 minutes from République, reachable from all of Île-de-France.' },
       ],
-      premiumExtra: ['Team tournament hosted by our staff, live ranking', 'Team trophy and group photo', 'Best shooter prize'],
+      premiumExtra: ['Team tournament hosted by our staff', 'Teams built with you to mix departments', 'Company quote and invoice'],
       premiumNote: 'For groups of 12+, we recommend the Premium pack or a private hire.',
       faq: [
         { q: 'How long should we plan?', a: 'Count 1 hour of shooting per lane. For 20 to 36 people, plan 2 hours on site with welcome, tournament and prize-giving.' },
@@ -469,7 +469,7 @@ export const en: Dict = {
         { title: 'A personal touch', text: 'The birthday name on the leaderboard, a welcome cocktail and, if you like, your cake served at the bar.' },
         { title: 'It carries on at the bar', text: 'The session naturally extends over cocktails and boards. No need to change address afterwards.' },
       ],
-      premiumExtra: ['"Whole gang" tournament with final ranking', 'Signature cocktail and premium buffet', 'Souvenir group photo'],
+      premiumExtra: ['"Whole gang" tournament with final ranking', 'The birthday name on the leaderboard', 'Your cake kept cool and served at the bar'],
       faq: [
         { q: 'Can we bring a cake?', a: 'Yes, let us know when booking. We keep it cool and serve it at the bar.' },
         { q: 'Can my 16-year-old friends shoot?', a: 'Yes, shooting is open from age 16. Alcohol is for adults only.' },
@@ -490,7 +490,7 @@ export const en: Dict = {
         { title: 'A ritual for the lucky one', text: 'Costume provided in the Premium pack, a round of shots for the whole gang and a solo final round in front of everyone.' },
         { title: 'Easy to fit in the day', text: '2 minutes from République, next to the bars of canal Saint-Martin and the 11e. Ideal early evening.' },
       ],
-      premiumExtra: ['Round of shots for the whole gang', 'Costume for the lucky one', 'Solo final round and best shooter prize'],
+      premiumExtra: ['Round of shots for the whole gang', 'Costume for the lucky one', 'Solo final round for the lucky one'],
       faq: [
         { q: 'Can we come as a group of 20?', a: 'Yes, on several adjacent lanes. Beyond that, ask for a quote.' },
         { q: 'Are dares allowed?', a: 'As long as they respect safety rules and other guests, yes. Our team has a few ideas.' },
@@ -511,7 +511,7 @@ export const en: Dict = {
         { title: 'For every team', text: 'No skill level required, no special outfit. The game puts everyone at ease, newcomers included.' },
         { title: 'A convenient address', text: '2 minutes from République, served by 5 métro lines. Your colleagues get home easily.' },
       ],
-      premiumExtra: ['Signature cocktail and premium buffet', 'Mini inter-team tournament with ranking', 'Best shooter prize'],
+      premiumExtra: ['Mini inter-team tournament with ranking', 'Adjacent lanes reserved for the whole team', 'Company quote and invoice'],
       premiumNote: 'Corporate evenings, launches and private hire: write to us for a quote.',
       faq: [
         { q: 'Can we book several lanes?', a: 'Yes, up to 8 lanes at once, i.e. 36 players. Beyond that, we go private.' },
@@ -532,7 +532,7 @@ export const en: Dict = {
         { title: 'A complete night out', text: 'Session, then cocktails and a board to share at the bar. No need to book anywhere else afterwards.' },
         { title: 'A gift idea', text: 'The Shooters gift card is valid for one year for a session for two, Standard or Premium pack.' },
       ],
-      premiumExtra: ['A signature cocktail each', 'Premium buffet', 'Final duel in tournament mode and souvenir photo'],
+      premiumExtra: ['Final duel in tournament mode', 'A table reserved at the bar after the session'],
       faq: [
         { q: 'Can two of us come without booking?', a: 'Yes if a lane is free, but online booking guarantees your slot.' },
         { q: 'Is there a gift card?', a: 'Yes, valid for one year, available at the venue and online soon.' },
@@ -552,7 +552,7 @@ export const en: Dict = {
         { title: 'From beginner to marksman', text: 'Levels unlock with accuracy. The final ranking settles every argument.' },
         { title: 'The bar for afterwards', text: 'Signature cocktails and sharing boards, on site, until midnight Tuesday to Saturday.' },
       ],
-      premiumExtra: ['A signature cocktail each', 'Tournament with ranking and best shooter prize', 'Group photo'],
+      premiumExtra: ['The gang’s final ranking displayed large', 'A table reserved at the bar after the session'],
       faq: [
         { q: 'From how many people?', a: 'From 2 people with the Standard pack, from 4 with the Premium pack.' },
         { q: 'Can we stay for a drink afterwards?', a: 'Of course, the bar is open to everyone during opening hours.' },

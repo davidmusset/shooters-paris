@@ -1,0 +1,118 @@
+---
+import { Image } from 'astro:assets';
+import Base from '../layouts/Base.astro';
+import PageHero from '../components/PageHero.astro';
+import Packs from '../components/Packs.astro';
+import Faq from '../components/Faq.astro';
+import Occasions from '../components/Occasions.astro';
+import CtaBand from '../components/CtaBand.astro';
+import { t } from '../content/i18n';
+import { ROUTES, path, type Lang, type OccasionKey } from '../content/routes';
+import { photo, alt, OCCASION_HERO, OCCASION_PHOTO } from '../content/photos';
+import { BOOKING } from '../content/site';
+
+interface Props {
+  lang: Lang;
+  occasion: OccasionKey;
+}
+const { lang, occasion } = Astro.props;
+const d = t(lang);
+const o = d.occasionPages[occasion];
+const c = d.occasionCommon;
+const hero = photo(OCCASION_HERO[occasion]);
+const side = photo(OCCASION_PHOTO[occasion]);
+const bookHref = BOOKING.externalUrl || path('book', lang);
+
+const breadcrumb = {
+  '@context': 'https://schema.org',
+  '@type': 'BreadcrumbList',
+  itemListElement: [
+    { '@type': 'ListItem', position: 1, name: 'Shooters Paris', item: new URL(ROUTES.home[lang], Astro.site).toString() },
+    { '@type': 'ListItem', position: 2, name: d.nav.occasions, item: new URL(ROUTES.occasions[lang], Astro.site).toString() },
+    { '@type': 'ListItem', position: 3, name: o.name, item: new URL(ROUTES[occasion][lang], Astro.site).toString() },
+  ],
+};
+---
+
+<Base lang={lang} title={o.metaTitle} description={o.metaDescription} routeKey={occasion} heroHeader jsonLd={[breadcrumb]}>
+  <PageHero title={o.title} lead={o.lead} image={hero} alt={alt(OCCASION_HERO[occasion], lang)}>
+    <div class="occasion-hero__meta rise rise--3">
+      <span class="badge">{o.badge}</span>
+      <a class="btn btn--peach" href={bookHref}>{c.ctaBook}</a>
+      <a class="btn btn--outline" href={path('contact', lang)}>{c.ctaQuote}</a>
+    </div>
+  </PageHero>
+
+  <section class="section theme-cream why">
+    <div class="container why__grid">
+      <div class="arch arch--frame why__media">
+        <Image src={side} alt={alt(OCCASION_PHOTO[occasion], lang)} widths={[480, 760, 1000]} sizes="(max-width: 900px) 90vw, 40vw" />
+      </div>
+      <div class="why__list">
+        <h2>{c.whyTitle}</h2>
+        {o.why.map((w) => (
+          <article class="why__item">
+            <h3>{w.title}</h3>
+            <p>{w.text}</p>
+          </article>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <Packs lang={lang} theme="dark" title={c.packsTitle} premiumExtra={o.premiumExtra} standardExtra={o.standardExtra} premiumNote={o.premiumNote} />
+
+  <Faq lang={lang} items={o.faq} title={c.faqTitle} theme="cream" />
+
+  <Occasions lang={lang} exclude={occasion} title={c.otherTitle} compact showNote={false} />
+
+  <CtaBand lang={lang} />
+</Base>
+
+<style>
+  .occasion-hero__meta {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 0.75rem;
+    margin-top: 0.75rem;
+  }
+  .why__grid {
+    display: grid;
+    grid-template-columns: 0.85fr 1.15fr;
+    gap: clamp(2rem, 5vw, 5rem);
+    align-items: start;
+  }
+  .why__media {
+    aspect-ratio: 4 / 5;
+    max-width: 460px;
+    width: 100%;
+    position: sticky;
+    top: 6.5rem;
+  }
+  .why__list {
+    display: grid;
+    gap: 1.5rem;
+  }
+  .why__list h2 {
+    margin-bottom: 0.5rem;
+  }
+  .why__item {
+    padding-left: 1.25rem;
+    border-left: 3px solid var(--peach);
+    display: grid;
+    gap: 0.35rem;
+  }
+  .why__item p {
+    opacity: 0.88;
+  }
+  @media (max-width: 900px) {
+    .why__grid {
+      grid-template-columns: 1fr;
+    }
+    .why__media {
+      position: static;
+      max-width: 420px;
+    }
+  }
+</style>

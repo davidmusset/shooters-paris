@@ -1,0 +1,10 @@
+---
+import OccasionView from '../../views/OccasionView.astro';
+import { OCCASION_SLUGS } from '../../content/routes';
+
+export function getStaticPaths() {
+  return Object.entries(OCCASION_SLUGS.fr).map(([slug, occasion]) => ({ params: { slug }, props: { occasion } }));
+}
+const { occasion } = Astro.props;
+---
+<OccasionView lang="fr" occasion={occasion} />

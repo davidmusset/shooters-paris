@@ -1,0 +1,134 @@
+---
+import { Image } from 'astro:assets';
+import Base from '../layouts/Base.astro';
+import PageHero from '../components/PageHero.astro';
+import CtaBand from '../components/CtaBand.astro';
+import { t } from '../content/i18n';
+import type { Lang } from '../content/routes';
+import { photo, alt } from '../content/photos';
+import { MENU_PDF } from '../content/site';
+
+interface Props {
+  lang: Lang;
+}
+const { lang } = Astro.props;
+const d = t(lang);
+const sectionPhotos = ['cocktail-green', 'cocktail-tonic', 'food-charcuterie'];
+const gallery = ['food-table-top', 'cocktail-orange', 'food-cheese', 'gc-tray-candles'];
+---
+
+<Base lang={lang} title={d.meta.menu.title} description={d.meta.menu.description} routeKey="menu" heroHeader>
+  <PageHero title={d.menuPage.title} lead={d.menuPage.lead} image={photo('food-table-rifle')} alt={alt('food-table-rifle', lang)} compact>
+    <a class="btn btn--peach rise rise--3" href={MENU_PDF} target="_blank" rel="noopener">{d.menuPage.download}</a>
+  </PageHero>
+
+  <section class="section theme-cream">
+    <div class="container menu__grid">
+      {d.menuPage.sections.map((s, i) => (
+        <article class="menu__item">
+          <div class="arch menu__media">
+            <Image src={photo(sectionPhotos[i])} alt={alt(sectionPhotos[i], lang)} widths={[400, 640]} sizes="(max-width: 900px) 90vw, 30vw" />
+          </div>
+          <h2>{s.title}</h2>
+          <p>{s.text}</p>
+        </article>
+      ))}
+    </div>
+  </section>
+
+  <section class="section theme-dark menu-pdf">
+    <div class="container">
+      <div class="menu-pdf__frame">
+        <object data={MENU_PDF} type="application/pdf" aria-label="Menu Shooters Paris (PDF)">
+          <p>
+            <a class="btn btn--peach" href={MENU_PDF} target="_blank" rel="noopener">{d.menuPage.download}</a>
+          </p>
+        </object>
+      </div>
+      <p class="menu-pdf__note">{d.menuPage.note}</p>
+    </div>
+  </section>
+
+  <section class="section section--tight theme-cream">
+    <div class="container gallery">
+      {gallery.map((g) => (
+        <div class="gallery__item">
+          <Image src={photo(g)} alt={alt(g, lang)} widths={[400, 640]} sizes="(max-width: 700px) 45vw, 22vw" />
+        </div>
+      ))}
+    </div>
+  </section>
+
+  <CtaBand lang={lang} />
+</Base>
+
+<style>
+  .menu__grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: clamp(1.5rem, 3vw, 2.5rem);
+  }
+  .menu__item {
+    display: grid;
+    gap: 0.75rem;
+  }
+  .menu__item h2 {
+    font-size: 1.7rem;
+    margin-top: 0.5rem;
+  }
+  .menu__item p {
+    opacity: 0.88;
+  }
+  .menu__media {
+    aspect-ratio: 3 / 4;
+  }
+  .menu-pdf__frame {
+    border-radius: var(--radius);
+    overflow: hidden;
+    background: var(--white);
+    height: min(80vh, 1000px);
+  }
+  .menu-pdf__frame object {
+    width: 100%;
+    height: 100%;
+    display: grid;
+    place-items: center;
+  }
+  .menu-pdf__note {
+    margin-top: 1rem;
+    font-size: 0.9rem;
+    opacity: 0.7;
+    text-align: center;
+  }
+  .gallery {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 1rem;
+  }
+  .gallery__item {
+    aspect-ratio: 1;
+    border-radius: var(--radius-sm);
+    overflow: hidden;
+  }
+  .gallery__item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  @media (max-width: 900px) {
+    .menu__grid {
+      grid-template-columns: 1fr;
+      max-width: 30rem;
+      margin-inline: auto;
+    }
+    .menu__media {
+      aspect-ratio: 4 / 3;
+    }
+    .gallery {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+    .menu-pdf__frame {
+      height: 70vh;
+    }
+  }
+</style>

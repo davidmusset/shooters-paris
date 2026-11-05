@@ -1,0 +1,109 @@
+---
+import Base from '../layouts/Base.astro';
+import PageHero from '../components/PageHero.astro';
+import Illus from '../components/Illus.astro';
+import { t } from '../content/i18n';
+import { path, type Lang } from '../content/routes';
+import { CONTACT } from '../content/site';
+
+interface Props {
+  lang: Lang;
+}
+const { lang } = Astro.props;
+const d = t(lang);
+const b = d.bookPage;
+const mailSubject = encodeURIComponent(lang === 'fr' ? 'Réservation Shooters Paris' : 'Booking Shooters Paris');
+const mailBody = encodeURIComponent(
+  lang === 'fr'
+    ? 'Bonjour,\n\nJe souhaite réserver une piste.\nDate : \nHeure : \nNombre de joueurs : \nPack (Standard / Premium) : \n\nMerci.'
+    : 'Hello,\n\nI would like to book a lane.\nDate: \nTime: \nNumber of players: \nPack (Standard / Premium): \n\nThank you.',
+);
+---
+
+<Base lang={lang} title={d.meta.book.title} description={d.meta.book.description} routeKey="book">
+  <PageHero title={b.title} lead={b.lead} compact />
+
+  <section class="section theme-cream">
+    <div class="container book__grid">
+      <!--
+        EMPLACEMENT DU MODULE DE RÉSERVATION
+        Remplacer le contenu de <div id="booking-widget"> par le script / l'iframe du widget
+        (ex. 4escape) quand il sera choisi. Le conteneur garde un ratio carré en attendant.
+      -->
+      <div class="booking-slot" id="booking-widget" data-booking-widget>
+        <Illus name="lock-feathers" class="booking-slot__icon" recolor />
+        <p class="booking-slot__title">{b.placeholder}</p>
+        <p class="booking-slot__text">{b.placeholderText}</p>
+      </div>
+
+      <aside class="book__aside">
+        <div class="card">
+          <h2>{b.altTitle}</h2>
+          <p>{b.altText}</p>
+          <a class="btn btn--peach" href={`mailto:${CONTACT.email}?subject=${mailSubject}&body=${mailBody}`}>{b.altCta}</a>
+        </div>
+        <div class="card">
+          <h2>{b.groupsTitle}</h2>
+          <p>{b.groupsText}</p>
+          <a class="btn btn--green" href={path('contact', lang)}>{b.groupsCta}</a>
+        </div>
+      </aside>
+    </div>
+  </section>
+</Base>
+
+<style>
+  .book__grid {
+    display: grid;
+    grid-template-columns: 1.3fr 0.9fr;
+    gap: clamp(1.5rem, 3vw, 3rem);
+    align-items: start;
+  }
+  .booking-slot {
+    aspect-ratio: 1;
+    width: 100%;
+    border: 2px dashed rgba(0, 55, 50, 0.35);
+    border-radius: var(--radius);
+    background: var(--white);
+    display: grid;
+    place-content: center;
+    justify-items: center;
+    text-align: center;
+    gap: 0.5rem;
+    padding: 2rem;
+    color: var(--green);
+  }
+  .booking-slot :global(.booking-slot__icon) {
+    width: 140px;
+    height: auto;
+    opacity: 0.6;
+    margin-bottom: 1rem;
+  }
+  .booking-slot__title {
+    font-family: var(--font-display);
+    font-style: italic;
+    font-weight: 700;
+    font-size: 1.6rem;
+  }
+  .booking-slot__text {
+    opacity: 0.7;
+    max-width: 24rem;
+  }
+  .book__aside {
+    display: grid;
+    gap: 1rem;
+  }
+  .book__aside .card {
+    display: grid;
+    gap: 0.75rem;
+    justify-items: start;
+  }
+  .book__aside h2 {
+    font-size: 1.6rem;
+  }
+  @media (max-width: 900px) {
+    .book__grid {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>

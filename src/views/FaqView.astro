@@ -1,0 +1,20 @@
+---
+import Base from '../layouts/Base.astro';
+import PageHero from '../components/PageHero.astro';
+import Faq from '../components/Faq.astro';
+import CtaBand from '../components/CtaBand.astro';
+import { t } from '../content/i18n';
+import type { Lang } from '../content/routes';
+
+interface Props {
+  lang: Lang;
+}
+const { lang } = Astro.props;
+const d = t(lang);
+---
+
+<Base lang={lang} title={d.meta.faq.title} description={d.meta.faq.description} routeKey="faq">
+  <PageHero title={d.faqPage.title} lead={d.faqPage.lead} compact />
+  <Faq lang={lang} title={d.faq.title} theme="cream" />
+  <CtaBand lang={lang} />
+</Base>

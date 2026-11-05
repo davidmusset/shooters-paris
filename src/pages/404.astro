@@ -1,0 +1,25 @@
+---
+import Base from '../layouts/Base.astro';
+import { t } from '../content/i18n';
+import { path } from '../content/routes';
+const d = t('fr');
+const e = t('en');
+---
+<Base lang="fr" title={`${d.meta.notFound.title} | Shooters Paris`} description={d.meta.notFound.description} noindex>
+  <section class="section theme-dark nf">
+    <div class="container">
+      <h1>{d.notFound.title}</h1>
+      <p class="lead">{d.notFound.text}</p>
+      <p class="lead muted">{e.notFound.title}. {e.notFound.text}</p>
+      <p class="nf__actions">
+        <a class="btn btn--peach" href={path('home', 'fr')}>{d.notFound.cta}</a>
+        <a class="btn btn--outline" href={path('home', 'en')}>{e.notFound.cta}</a>
+      </p>
+    </div>
+  </section>
+</Base>
+<style>
+  .nf { min-height: 70vh; display: grid; align-items: center; }
+  .nf .container { display: grid; gap: 1rem; padding-top: 4rem; }
+  .nf__actions { display: flex; gap: 0.75rem; flex-wrap: wrap; margin-top: 1rem; }
+</style>

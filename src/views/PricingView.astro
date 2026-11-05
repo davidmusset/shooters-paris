@@ -1,0 +1,78 @@
+---
+import { Image } from 'astro:assets';
+import Base from '../layouts/Base.astro';
+import PageHero from '../components/PageHero.astro';
+import Packs from '../components/Packs.astro';
+import Faq from '../components/Faq.astro';
+import CtaBand from '../components/CtaBand.astro';
+import { t } from '../content/i18n';
+import { path, type Lang } from '../content/routes';
+import { photo, alt } from '../content/photos';
+
+interface Props {
+  lang: Lang;
+}
+const { lang } = Astro.props;
+const d = t(lang);
+const faqItems = d.faq.items.filter((f) => /piste|lane|personnes|people|réserver|book|retard|late|âge|age/i.test(f.q)).slice(0, 6);
+---
+
+<Base lang={lang} title={d.meta.pricing.title} description={d.meta.pricing.description} routeKey="pricing" heroHeader>
+  <PageHero title={d.pricingPage.title} lead={d.pricingPage.lead} image={photo('gc-red-cocktail-rifle')} alt={alt('gc-red-cocktail-rifle', lang)} compact />
+
+  <Packs lang={lang} theme="dark" />
+
+  <section class="section theme-cream included">
+    <div class="container included__grid">
+      <div class="included__text">
+        <h2>{d.pricingPage.includedTitle}</h2>
+        <ul class="check-list">
+          {d.pricingPage.included.map((i) => <li>{i}</li>)}
+        </ul>
+      </div>
+      <div class="gift card">
+        <h3>{d.pricingPage.giftTitle}</h3>
+        <p>{d.pricingPage.giftText}</p>
+        <a class="btn btn--outline btn--small" href={path('contact', lang)}>{d.nav.contact}</a>
+      </div>
+      <div class="arch arch--frame included__media">
+        <Image src={photo('player-screen-75')} alt={alt('player-screen-75', lang)} widths={[480, 760]} sizes="(max-width: 900px) 90vw, 30vw" />
+      </div>
+    </div>
+  </section>
+
+  <Faq lang={lang} items={faqItems} theme="dark" showMore jsonLd={false} />
+
+  <CtaBand lang={lang} />
+</Base>
+
+<style>
+  .included__grid {
+    display: grid;
+    grid-template-columns: 1.2fr 1fr 0.9fr;
+    gap: clamp(1.5rem, 3vw, 3rem);
+    align-items: start;
+  }
+  .included__text {
+    display: grid;
+    gap: 1.25rem;
+  }
+  .gift {
+    display: grid;
+    gap: 0.75rem;
+    justify-items: start;
+    background: var(--peach-100);
+    border: 1px solid rgba(255, 119, 132, 0.5);
+  }
+  .included__media {
+    aspect-ratio: 3 / 4;
+  }
+  @media (max-width: 900px) {
+    .included__grid {
+      grid-template-columns: 1fr;
+    }
+    .included__media {
+      max-width: 360px;
+    }
+  }
+</style>

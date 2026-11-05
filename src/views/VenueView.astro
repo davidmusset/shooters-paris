@@ -1,0 +1,61 @@
+---
+import { Image } from 'astro:assets';
+import Base from '../layouts/Base.astro';
+import PageHero from '../components/PageHero.astro';
+import Venue from '../components/Venue.astro';
+import CtaBand from '../components/CtaBand.astro';
+import { t } from '../content/i18n';
+import type { Lang } from '../content/routes';
+import { photo, alt } from '../content/photos';
+
+interface Props {
+  lang: Lang;
+}
+const { lang } = Astro.props;
+const d = t(lang);
+const gallery = ['player-entrance-56', 'ambiance-barman', 'player-table-64', 'player-lane-116', 'player-bar-141', 'gc-column-rifle'];
+---
+
+<Base lang={lang} title={d.meta.venue.title} description={d.meta.venue.description} routeKey="venue" heroHeader>
+  <PageHero title={d.venue.title} lead={`${d.venue.addressLine}. ${d.venue.nearby}.`} image={photo('player-group-80')} alt={alt('player-group-80', lang)} compact />
+
+  <Venue lang={lang} title={d.venue.hoursTitle} />
+
+  <section class="section section--tight theme-cream">
+    <div class="container gallery">
+      {gallery.map((g) => (
+        <div class="gallery__item">
+          <Image src={photo(g)} alt={alt(g, lang)} widths={[400, 640, 900]} sizes="(max-width: 700px) 45vw, 30vw" />
+        </div>
+      ))}
+    </div>
+  </section>
+
+  <CtaBand lang={lang} />
+</Base>
+
+<style>
+  .gallery {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 1rem;
+  }
+  .gallery__item {
+    aspect-ratio: 4 / 5;
+    border-radius: var(--radius-sm);
+    overflow: hidden;
+  }
+  .gallery__item:nth-child(2) {
+    border-radius: var(--radius-arch);
+  }
+  .gallery__item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  @media (max-width: 700px) {
+    .gallery {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+  }
+</style>

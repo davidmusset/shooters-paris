@@ -1,0 +1,23 @@
+---
+import Base from '../layouts/Base.astro';
+import PageHero from '../components/PageHero.astro';
+import Occasions from '../components/Occasions.astro';
+import Packs from '../components/Packs.astro';
+import CtaBand from '../components/CtaBand.astro';
+import { t } from '../content/i18n';
+import type { Lang } from '../content/routes';
+import { photo, alt } from '../content/photos';
+
+interface Props {
+  lang: Lang;
+}
+const { lang } = Astro.props;
+const d = t(lang);
+---
+
+<Base lang={lang} title={d.meta.occasions.title} description={d.meta.occasions.description} routeKey="occasions" heroHeader>
+  <PageHero title={d.occasionsPage.title} lead={d.occasionsPage.lead} image={photo('player-group-159')} alt={alt('player-group-159', lang)} compact />
+  <Occasions lang={lang} title={d.occasions.title} />
+  <Packs lang={lang} theme="dark" />
+  <CtaBand lang={lang} />
+</Base>

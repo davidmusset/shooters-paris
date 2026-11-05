@@ -485,7 +485,7 @@ export const fr = {
         { title: 'Un vrai moment de bar', text: 'La remise des prix se fait au comptoir, trophée en main, autour des cocktails et des planches. C’est là que les conversations continuent.' },
         { title: 'Simple à organiser', text: 'Un seul interlocuteur, un devis sous 24 h ouvrées, une facture. À 2 minutes de République, accessible de toute l’Île-de-France.' },
       ],
-      premiumExtra: ['Tournoi par équipes animé par notre équipe, classement en direct', 'Trophée d’équipe et photo de groupe', 'Prix du meilleur tireur'],
+      premiumExtra: ['Tournoi par équipes animé par notre équipe', 'Composition des équipes avec vous pour mélanger les services', 'Devis et facture entreprise'],
       premiumNote: 'Pour les groupes de plus de 12 personnes, nous recommandons le pack Premium ou une privatisation.',
       faq: [
         { q: 'Combien de temps prévoir ?', a: 'Comptez 1 h de tir par piste. Pour un groupe de 20 à 36 personnes, prévoyez 2 h sur place avec l’accueil, le tournoi et la remise des prix.' },
@@ -507,7 +507,7 @@ export const fr = {
         { title: 'Une touche personnelle', text: 'Le nom de la personne fêtée sur le tableau des scores, un cocktail de bienvenue et, si vous le souhaitez, votre gâteau servi au bar.' },
         { title: 'On continue au bar', text: 'La session se prolonge naturellement autour des cocktails et des planches. Pas besoin de changer d’adresse pour la suite.' },
       ],
-      premiumExtra: ['Tournoi « la grande bande » avec classement final', 'Cocktail signature et buffet premium', 'Photo de groupe souvenir'],
+      premiumExtra: ['Tournoi « la grande bande » avec classement final', 'Nom de la personne fêtée sur le tableau des scores', 'Votre gâteau gardé au frais et servi au bar'],
       faq: [
         { q: 'Peut-on apporter un gâteau ?', a: 'Oui, prévenez-nous à la réservation. Nous le gardons au frais et le servons au bar.' },
         { q: 'Mes amis de 16 ans peuvent-ils tirer ?', a: 'Oui, l’activité est accessible dès 16 ans. L’alcool est réservé aux majeurs.' },
@@ -528,7 +528,7 @@ export const fr = {
         { title: 'Un rituel pour l’heureux élu', text: 'Déguisement fourni dans le pack Premium, tournée de shooters pour toute la bande et manche finale en solo devant tout le monde.' },
         { title: 'Facile à caler dans la journée', text: 'À 2 minutes de République, à côté des bars du canal Saint-Martin et du 11e. Idéal en début de soirée.' },
       ],
-      premiumExtra: ['Tournée de shooters pour toute la bande', 'Déguisement pour l’heureux élu', 'Manche finale en solo et prix du meilleur tireur'],
+      premiumExtra: ['Tournée de shooters pour toute la bande', 'Déguisement pour l’heureux élu', 'Manche finale en solo pour l’heureux élu'],
       faq: [
         { q: 'Peut-on venir en groupe de 20 ?', a: 'Oui, sur plusieurs pistes côte à côte. Au-delà, demandez un devis.' },
         { q: 'Les gages sont-ils autorisés ?', a: 'Tant qu’ils respectent les règles de sécurité et les autres clients, oui. Notre équipe a quelques idées.' },
@@ -549,7 +549,7 @@ export const fr = {
         { title: 'Pour toutes les équipes', text: 'Pas de niveau requis, pas de tenue spéciale. Le jeu met tout le monde à l’aise, y compris les nouveaux.' },
         { title: 'Une adresse pratique', text: 'À 2 minutes de République, desservi par 5 lignes de métro. Vos collègues rentrent facilement.' },
       ],
-      premiumExtra: ['Cocktail signature et buffet premium', 'Mini-tournoi inter-équipes avec classement', 'Prix du meilleur tireur'],
+      premiumExtra: ['Mini-tournoi inter-équipes avec classement', 'Pistes réservées côte à côte pour toute l’équipe', 'Devis et facture entreprise'],
       premiumNote: 'Soirées d’entreprise, lancements et privatisations : écrivez-nous pour un devis.',
       faq: [
         { q: 'Peut-on réserver plusieurs pistes ?', a: 'Oui, jusqu’à 8 pistes en simultané, soit 36 joueurs. Au-delà, on privatise.' },
@@ -570,7 +570,7 @@ export const fr = {
         { title: 'Une sortie complète', text: 'Session puis cocktails et planche à partager au bar. Pas besoin de réserver ailleurs ensuite.' },
         { title: 'Une idée cadeau', text: 'La carte cadeau Shooters est valable un an pour une session en duo, pack Standard ou Premium.' },
       ],
-      premiumExtra: ['Cocktail signature pour chacun', 'Buffet premium', 'Duel final en mode tournoi et photo souvenir'],
+      premiumExtra: ['Duel final en mode tournoi', 'Table réservée au bar après la session'],
       faq: [
         { q: 'Peut-on venir à deux sans réserver ?', a: 'Oui si une piste est libre, mais la réservation en ligne garantit votre créneau.' },
         { q: 'Existe-t-il une carte cadeau ?', a: 'Oui, valable un an, disponible sur place et bientôt en ligne.' },
@@ -590,7 +590,7 @@ export const fr = {
         { title: 'Du débutant au tireur confirmé', text: 'Les niveaux se débloquent avec la précision. Le classement final met tout le monde d’accord.' },
         { title: 'Le bar pour la suite', text: 'Cocktails signature et planches à partager, sur place, jusqu’à minuit du mardi au samedi.' },
       ],
-      premiumExtra: ['Cocktail signature pour chacun', 'Tournoi avec classement et prix du meilleur tireur', 'Photo de groupe'],
+      premiumExtra: ['Classement final de la bande affiché en grand', 'Table réservée au bar après la session'],
       faq: [
         { q: 'À partir de combien de personnes ?', a: 'Dès 2 personnes en pack Standard, dès 4 en pack Premium.' },
         { q: 'Peut-on rester boire un verre après ?', a: 'Bien sûr, le bar est ouvert à tous aux horaires d’ouverture.' },

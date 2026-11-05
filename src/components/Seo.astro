@@ -15,7 +15,8 @@ interface Props {
   noindex?: boolean;
 }
 
-const { lang, title, description, routeKey, alternates, image = OG_IMAGE, jsonLd = [], noindex = false } = Astro.props;
+const { lang, title, description, routeKey, alternates, jsonLd = [], noindex = false } = Astro.props;
+const image = Astro.props.image ?? (lang === 'en' ? OG_IMAGE.replace('.jpg', '-en.jpg') : OG_IMAGE);
 
 const current = Astro.url.pathname.replace(/\/$/, '') || '/';
 const alt: Record<Lang, string> = routeKey

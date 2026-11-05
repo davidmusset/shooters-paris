@@ -1,0 +1,173 @@
+---
+import { Image } from 'astro:assets';
+import Base from '../layouts/Base.astro';
+import PageHero from '../components/PageHero.astro';
+import Illus from '../components/Illus.astro';
+import CtaBand from '../components/CtaBand.astro';
+import { t } from '../content/i18n';
+import { path, type Lang } from '../content/routes';
+import { photo, alt } from '../content/photos';
+
+interface Props {
+  lang: Lang;
+}
+const { lang } = Astro.props;
+const d = t(lang);
+const sectionPhotos = ['gc-rifle-table', 'player-tablet-143', 'cocktail-hands'];
+const gamePhotos = ['game-targets', 'game-clay', 'game-cards'];
+---
+
+<Base lang={lang} title={d.meta.concept.title} description={d.meta.concept.description} routeKey="concept" heroHeader>
+  <PageHero title={d.conceptPage.title} lead={d.conceptPage.lead} image={photo('ambiance-lane-dark')} alt={alt('ambiance-lane-dark', lang)} />
+
+  {d.conceptPage.sections.map((s, i) => (
+    <section class:list={['section', i % 2 === 0 ? 'theme-cream' : 'theme-dark', 'split', { 'split--reverse': i % 2 === 1 }]}>
+      <div class="container split__grid">
+        <div class="arch arch--frame split__media">
+          <Image src={photo(sectionPhotos[i])} alt={alt(sectionPhotos[i], lang)} widths={[480, 760, 1000]} sizes="(max-width: 900px) 90vw, 46vw" />
+        </div>
+        <div class="split__text">
+          <h2>{s.title}</h2>
+          {s.text.map((p) => <p>{p}</p>)}
+        </div>
+      </div>
+    </section>
+  ))}
+
+  <section class="section theme-deep games">
+    <div class="ornament games__ornament"><Illus name="guns" /></div>
+    <div class="container">
+      <div class="section-head">
+        <h2>{d.games.title}</h2>
+        <p class="lead">{d.games.lead}</p>
+      </div>
+      <div class="grid grid--3">
+        {d.games.items.map((g, i) => (
+          <article class="game">
+            <div class="game__media">
+              <Image src={photo(gamePhotos[i])} alt={alt(gamePhotos[i], lang)} width="720" height="720" />
+            </div>
+            <h3 class="caps game__name">{g.name}</h3>
+            <p>{g.text}</p>
+          </article>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="section theme-cream safety">
+    <div class="container">
+      <div class="section-head section-head--center">
+        <h2>{d.safety.title}</h2>
+      </div>
+      <div class="grid grid--3">
+        {d.safety.items.map((s, i) => (
+          <article class="safety__item">
+            <Illus name={['gun-2', 'target', 'lock-feathers'][i]} class="safety__icon" recolor />
+            <h3>{s.title}</h3>
+            <p>{s.text}</p>
+          </article>
+        ))}
+      </div>
+      <p class="safety__cta"><a class="btn btn--green" href={path('pricing', lang)}>{d.conceptPage.cta}</a></p>
+    </div>
+  </section>
+
+  <CtaBand lang={lang} />
+</Base>
+
+<style>
+  .split__grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: clamp(2rem, 5vw, 5rem);
+    align-items: center;
+  }
+  .split--reverse .split__media {
+    order: 2;
+  }
+  .split__media {
+    aspect-ratio: 4 / 5;
+    max-width: 520px;
+    width: 100%;
+    justify-self: center;
+  }
+  .split__text {
+    display: grid;
+    gap: 1.25rem;
+    max-width: 34rem;
+  }
+  .split__text p {
+    opacity: 0.9;
+  }
+  @media (max-width: 900px) {
+    .split__grid {
+      grid-template-columns: 1fr;
+    }
+    .split--reverse .split__media {
+      order: 0;
+    }
+    .split__media {
+      max-width: 420px;
+    }
+  }
+  .games {
+    overflow: hidden;
+  }
+  .games__ornament {
+    width: 380px;
+    right: -100px;
+    top: -40px;
+    opacity: 0.14;
+  }
+  .game {
+    display: grid;
+    gap: 0.75rem;
+    position: relative;
+    z-index: 1;
+  }
+  .game__media {
+    border-radius: var(--radius-arch);
+    overflow: hidden;
+    aspect-ratio: 1;
+    border: 1.5px solid rgba(147, 210, 183, 0.5);
+    padding: 0.4rem;
+  }
+  .game__media img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: inherit;
+  }
+  .game__name {
+    font-size: 1.15rem;
+    color: var(--mint);
+    margin-top: 0.5rem;
+  }
+  .game p {
+    opacity: 0.88;
+  }
+  .safety__item {
+    display: grid;
+    gap: 0.75rem;
+    justify-items: start;
+    background: var(--white);
+    border-radius: var(--radius);
+    padding: 2rem;
+    color: var(--green);
+  }
+  .safety :global(.safety__icon) {
+    height: 72px;
+    width: auto;
+    max-width: 140px;
+    margin-bottom: 0.5rem;
+  }
+  .safety__item p {
+    color: var(--ink);
+    opacity: 0.88;
+  }
+  .safety__cta {
+    text-align: center;
+    margin-top: 2.5rem;
+  }
+</style>
