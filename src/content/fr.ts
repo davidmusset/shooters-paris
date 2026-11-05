@@ -45,9 +45,9 @@ export const fr = {
 
   meta: {
     home: {
-      title: 'Shooters Paris : bar stand de tir & cocktails, République (Paris 10e)',
+      title: 'Shooters Paris : Airsoft shooting bar & cocktails, République (Paris 10e)',
       description:
-        "Le premier bar stand de tir de France. 8 pistes privées, répliques airsoft 1:1, plus de 20 scénarios de jeu et un bar à cocktails, à 3 minutes de République. Dès 35 € par personne, à partir de 16 ans.",
+        "Le premier Airsoft shooting bar de France. 8 pistes privées, répliques airsoft 1:1, plus de 20 scénarios de jeu et un bar à cocktails, à 3 minutes de République. Dès 35 € par personne, à partir de 16 ans.",
     },
     concept: {
       title: 'Le concept Shooters : un stand de tir caché derrière un bar à cocktails',
@@ -72,7 +72,7 @@ export const fr = {
     faq: {
       title: 'FAQ Shooters Paris : âge minimum, sécurité, réservation, groupes',
       description:
-        'Toutes les réponses sur le bar stand de tir Shooters Paris : âge minimum 16 ans, sécurité des répliques airsoft, réservation, retard, groupes et privatisation.',
+        'Toutes les réponses sur l’Airsoft shooting bar Shooters Paris : âge minimum 16 ans, sécurité des répliques airsoft, réservation, retard, groupes et privatisation.',
     },
     contact: {
       title: 'Contact & devis : Shooters Paris',
@@ -99,7 +99,7 @@ export const fr = {
   },
 
   hero: {
-    title: 'Le premier bar stand de tir de France',
+    title: 'Le premier Airsoft shooting bar de France',
     lead:
       'Des répliques réalistes, des scénarios de jeu sur écran géant et des cocktails signature, le tout dans un cadre sécurisé à 3 minutes de République.',
     ctaBook: 'Réserver une piste',
@@ -337,7 +337,7 @@ export const fr = {
   },
 
   footer: {
-    tagline: 'Bar stand de tir & cocktails',
+    tagline: 'Airsoft shooting bar & cocktails',
     hoursTitle: 'Horaires',
     navTitle: 'Navigation',
     infoTitle: 'Infos',
@@ -504,7 +504,7 @@ export const fr = {
       name: 'Anniversaire',
       badge: '2 à 32 personnes · dès 16 ans',
       short: 'Une piste à votre nom, des scores à départager et de quoi trinquer entre chaque manche. Gâteau et décoration possibles sur demande.',
-      metaTitle: 'Anniversaire à Paris : fêtez-le au bar stand de tir Shooters (République)',
+      metaTitle: 'Anniversaire à Paris : fêtez-le à l’Airsoft shooting bar Shooters (République)',
       metaDescription:
         'Fêtez votre anniversaire chez Shooters Paris : piste de tir privée, scores en direct, cocktails et amuse-bouches. De 2 à 32 personnes dès 16 ans, à 3 minutes de République.',
       title: 'Un anniversaire qu’on ne fête pas deux fois',
@@ -525,7 +525,7 @@ export const fr = {
       name: 'EVG / EVJF',
       badge: '4 à 20 personnes · 1 h ou 1 h 30',
       short: 'Vous arrivez, la piste est à votre nom, la tournée de shooters vous attend. Le futur marié ou la future mariée est en cible toute la session.',
-      metaTitle: 'EVG / EVJF à Paris : stand de tir et cocktails chez Shooters (République)',
+      metaTitle: 'EVG / EVJF à Paris : Airsoft shooting bar et cocktails chez Shooters (République)',
       metaDescription:
         'Enterrement de vie de garçon ou de jeune fille chez Shooters Paris : tournoi de tir sur piste privée, tournée de shooters, déguisement de l’heureux élu, cocktails. De 4 à 20 personnes, dès 35 €.',
       title: 'Un EVG, un EVJF, une cible',
@@ -546,7 +546,7 @@ export const fr = {
       name: 'Afterwork / corporate',
       badge: '4 à 32 personnes · dès 18 h',
       short: 'Dix-huit heures, la journée est finie. Une piste pour l’équipe, une planche à partager, et la semaine est déjà oubliée.',
-      metaTitle: 'Afterwork à Paris 10e : stand de tir et cocktails entre collègues chez Shooters',
+      metaTitle: 'Afterwork à Paris 10e : Airsoft shooting bar entre collègues chez Shooters',
       metaDescription:
         'Afterwork original près de République : piste de tir privée pour l’équipe, cocktails et planches à partager. De 4 à 32 personnes, dès 35 € par personne. Soirées d’entreprise sur devis.',
       title: 'L’afterwork qui vise juste',
@@ -587,7 +587,7 @@ export const fr = {
       name: 'Entre amis',
       badge: '2 à 12 personnes · 1 h',
       short: 'Pas d’occasion particulière, juste l’envie de se voir ailleurs qu’accoudés à un comptoir. Une piste à vous, une réplique chacun, un score à défendre.',
-      metaTitle: 'Sortie entre amis à Paris : bar stand de tir Shooters, République',
+      metaTitle: 'Sortie entre amis à Paris : Airsoft shooting bar Shooters, République',
       metaDescription:
         'Une sortie entre amis différente à Paris 10e : une piste de tir privée pour votre groupe, plus de 20 scénarios, scores en direct, cocktails et amuse-bouches dès 35 € par personne.',
       title: 'Entre amis, la piste est à vous',

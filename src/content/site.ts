@@ -11,8 +11,8 @@ export const BRAND = {
   name: 'Shooters Paris',
   legalName: 'Shooters Paris',
   tagline: {
-    fr: 'Bar stand de tir & cocktails, Paris 10e',
-    en: 'Shooting range bar & cocktails, Paris 10e',
+    fr: 'Airsoft shooting bar & cocktails, Paris 10e',
+    en: 'Airsoft shooting bar & cocktails, Paris 10e',
   },
 };
 

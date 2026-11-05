@@ -21,9 +21,9 @@ export const en: Dict = {
 
   meta: {
     home: {
-      title: 'Shooters Paris: shooting range bar & cocktails near République (Paris 10e)',
+      title: 'Shooters Paris: airsoft shooting bar & cocktails near République (Paris 10e)',
       description:
-        "France's first shooting range bar. 8 private lanes, 1:1 airsoft replicas, 20+ game scenarios and a cocktail bar, 3 minutes from République. From €35 per person, ages 16+.",
+        "France's first airsoft shooting bar. 8 private lanes, 1:1 airsoft replicas, 20+ game scenarios and a cocktail bar, 3 minutes from République. From €35 per person, ages 16+.",
     },
     concept: {
       title: 'The Shooters concept: a shooting range hidden behind a cocktail bar',
@@ -48,7 +48,7 @@ export const en: Dict = {
     faq: {
       title: 'Shooters Paris FAQ: minimum age, safety, booking, groups',
       description:
-        'Everything about the Shooters Paris shooting range bar: minimum age 16, airsoft replica safety, booking, lateness, groups and private hire.',
+        'Everything about the Shooters Paris airsoft shooting bar: minimum age 16, airsoft replica safety, booking, lateness, groups and private hire.',
     },
     contact: {
       title: 'Contact & quotes: Shooters Paris',
@@ -70,7 +70,7 @@ export const en: Dict = {
   },
 
   hero: {
-    title: "France's first shooting range bar",
+    title: "France's first airsoft shooting bar",
     lead:
       'Realistic replicas, game scenarios on giant screens and signature cocktails, all in a safe venue 3 minutes from République.',
     ctaBook: 'Book a lane',
@@ -298,7 +298,7 @@ export const en: Dict = {
   },
 
   footer: {
-    tagline: 'Shooting range bar & cocktails',
+    tagline: 'Airsoft shooting bar & cocktails',
     hoursTitle: 'Opening hours',
     navTitle: 'Navigation',
     infoTitle: 'Info',
@@ -465,7 +465,7 @@ export const en: Dict = {
       name: 'Birthday',
       badge: '2 to 32 people · ages 16+',
       short: 'A lane in your name, scores to settle and drinks between every round. Cake and decorations on request.',
-      metaTitle: 'Birthday in Paris: celebrate at the Shooters shooting range bar (République)',
+      metaTitle: 'Birthday in Paris: celebrate at the Shooters airsoft shooting bar (République)',
       metaDescription:
         'Celebrate your birthday at Shooters Paris: private shooting lane, live scores, cocktails and amuse-bouches. 2 to 32 people from age 16, 3 minutes from République.',
       title: 'A birthday you will not celebrate twice',
@@ -548,7 +548,7 @@ export const en: Dict = {
       name: 'With friends',
       badge: '2 to 12 people · 1 h',
       short: 'No particular occasion, just the urge to meet somewhere other than leaning on a counter. A lane of your own, a replica each, a score to defend.',
-      metaTitle: 'A night out with friends in Paris: Shooters shooting range bar, République',
+      metaTitle: 'A night out with friends in Paris: Shooters airsoft shooting bar, République',
       metaDescription:
         'A different night out with friends in Paris 10e: a private shooting lane for your group, 20+ scenarios, live scores, cocktails and amuse-bouches from €35 per person.',
       title: 'With friends, the lane is yours',
